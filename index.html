@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lithuanian Marketing Jobs 2026 — EDA</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#fff;--fg:#111;--muted:#666;--subtle:#e8e8e8;--light:#f5f5f5;
+  --border:1px solid #e0e0e0;--r:4px;
+  --font:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
+  --sen-j:#DEEAF1;--sen-m:#9DC3E6;--sen-s:#4472C4;--sen-l:#2E5090;--sen-h:#1F3864;
+}
+body{font-family:var(--font);background:var(--bg);color:var(--fg);font-size:13px;line-height:1.5}
+.page{max-width:1280px;margin:0 auto;padding:32px 24px 80px}
+
+header{border-bottom:2px solid var(--fg);padding-bottom:16px;margin-bottom:26px;display:flex;align-items:flex-end;justify-content:space-between;gap:20px}
+header h1{font-size:20px;font-weight:700;letter-spacing:-.4px}
+header .sub{color:var(--muted);font-size:11px;margin-top:3px}
+.meta{color:var(--muted);font-size:11px;text-align:right;line-height:1.9}
+
+/* stat strip */
+.stats{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:24px}
+.stat{border:var(--border);border-radius:var(--r);padding:13px 14px}
+.stat .n{font-size:26px;font-weight:700;letter-spacing:-1px;line-height:1;margin-bottom:4px}
+.stat .l{color:var(--muted);font-size:9px;text-transform:uppercase;letter-spacing:.6px}
+
+/* tabs */
+.tabs{display:flex;border-bottom:var(--border);margin-bottom:22px;gap:0;overflow-x:auto}
+.tab-btn{background:none;border:none;border-bottom:2px solid transparent;margin-bottom:-1px;
+  padding:8px 15px;cursor:pointer;font:500 12px/1 var(--font);color:var(--muted);white-space:nowrap;flex-shrink:0}
+.tab-btn:hover{color:var(--fg)}
+.tab-btn.active{color:var(--fg);border-bottom-color:var(--fg)}
+.tab-panel{display:none}.tab-panel.active{display:block}
+
+/* grid helpers */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:14px}
+.g13{display:grid;grid-template-columns:1fr 3fr;gap:14px;margin-bottom:14px}
+.g31{display:grid;grid-template-columns:3fr 1fr;gap:14px;margin-bottom:14px}
+.mb0{margin-bottom:0}
+
+/* card */
+.card{border:var(--border);border-radius:var(--r);padding:16px}
+.card h3{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.7px;color:var(--muted);margin-bottom:12px}
+.cw{position:relative}
+
+/* horizontal bar rows */
+.hb-rows{display:flex;flex-direction:column;gap:8px}
+.hb-row{display:flex;align-items:center;gap:8px;font-size:11px}
+.hb-lbl{width:170px;flex-shrink:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#444}
+.hb-track{flex:1;height:6px;background:var(--light);border-radius:3px;position:relative}
+.hb-fill{position:absolute;height:100%;background:var(--fg);border-radius:3px}
+.hb-val{width:80px;text-align:right;color:var(--muted);flex-shrink:0;font-variant-numeric:tabular-nums}
+
+/* badge */
+.badge{display:inline-block;padding:2px 6px;border-radius:2px;font-size:10px;font-weight:600;background:var(--light);border:var(--border);white-space:nowrap}
+.badge.r{background:var(--fg);color:#fff;border-color:var(--fg)}
+.sen-badge{display:inline-block;padding:2px 6px;border-radius:2px;font-size:9px;font-weight:700;white-space:nowrap}
+.ai-badge{background:#FFF3CD;color:#856404;border:1px solid #FFE69C;border-radius:2px;padding:1px 5px;font-size:9px;font-weight:700}
+.gs-badge-G{background:#DDEBF7;color:#1F3864;border:1px solid #BDD7EE;border-radius:2px;padding:1px 5px;font-size:9px;font-weight:700}
+.gs-badge-S{background:#F2F2F2;color:#444;border:1px solid #D9D9D9;border-radius:2px;padding:1px 5px;font-size:9px;font-weight:700}
+
+/* skill cloud */
+.cloud{display:flex;flex-wrap:wrap;gap:5px}
+.stag{background:var(--light);border:var(--border);border-radius:3px;padding:3px 8px;font-size:11px;display:flex;align-items:center;gap:5px;cursor:pointer;transition:background .1s;user-select:none}
+.stag:hover{background:var(--subtle)}.stag.on{background:var(--fg);color:#fff;border-color:var(--fg)}
+.stag .n{font-weight:700;font-size:9px;opacity:.5}
+
+/* pill legend */
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:10px;color:var(--muted);margin-bottom:12px;align-items:center}
+.legend span{display:flex;align-items:center;gap:4px}
+.dot{width:10px;height:10px;border-radius:2px;flex-shrink:0}
+
+/* table */
+.tc{display:flex;gap:7px;flex-wrap:wrap;align-items:center;margin-bottom:10px}
+.srch{flex:1;min-width:160px;padding:6px 10px;border:var(--border);border-radius:var(--r);font:12px/1 var(--font);outline:none}
+.srch:focus{border-color:var(--fg)}
+select.flt{padding:6px 8px;border:var(--border);border-radius:var(--r);font:11px/1 var(--font);background:var(--bg);cursor:pointer;outline:none}
+select.flt:focus{border-color:var(--fg)}
+.tcount{font-size:10px;color:var(--muted);margin-left:auto}
+table{width:100%;border-collapse:collapse;font-size:11px}
+th{text-align:left;font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);padding:7px 9px;border-bottom:2px solid var(--fg);cursor:pointer;white-space:nowrap;user-select:none}
+th:hover{color:var(--fg)}
+th.asc::after{content:' ↑'}th.desc::after{content:' ↓'}
+td{padding:7px 9px;border-bottom:var(--border);vertical-align:middle}
+tr:hover td{background:var(--light)}
+td a{color:var(--fg);text-decoration:none;font-weight:500}td a:hover{text-decoration:underline}
+.nores{padding:48px;text-align:center;color:var(--muted)}
+
+@media(max-width:960px){
+  .stats{grid-template-columns:repeat(3,1fr)}
+  .g2,.g3,.g13,.g31{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <div>
+    <h1>Lithuanian Marketing Jobs · EDA</h1>
+    <div class="sub">CV Bankas &nbsp;·&nbsp; CV Market &nbsp;·&nbsp; Unicorns.lt &nbsp;·&nbsp; March 2026</div>
+  </div>
+  <div class="meta">180 listings &nbsp;·&nbsp; 31 dimensions<br>Exploratory Data Analysis</div>
+</header>
+
+<div class="stats">
+  <div class="stat"><div class="n">180</div><div class="l">Listings</div></div>
+  <div class="stat"><div class="n" id="s-med">—</div><div class="l">Median salary</div></div>
+  <div class="stat"><div class="n" id="s-sal-pct">—</div><div class="l">Have salary data</div></div>
+  <div class="stat"><div class="n">17.8%</div><div class="l">Require AI skills</div></div>
+  <div class="stat"><div class="n">31.7%</div><div class="l">Generalist roles</div></div>
+  <div class="stat"><div class="n" id="s-remote">—</div><div class="l">Remote-friendly</div></div>
+</div>
+
+<div class="tabs">
+  <button class="tab-btn active" data-tab="overview">Overview</button>
+  <button class="tab-btn" data-tab="roles">Roles &amp; Seniority</button>
+  <button class="tab-btn" data-tab="salary">Salary</button>
+  <button class="tab-btn" data-tab="requirements">Requirements</button>
+  <button class="tab-btn" data-tab="benefits">Benefits</button>
+  <button class="tab-btn" data-tab="skills">Skills</button>
+  <button class="tab-btn" data-tab="insights">Insights</button>
+  <button class="tab-btn" data-tab="listings">All Listings</button>
+</div>
+
+<!-- OVERVIEW -->
+<div id="tab-overview" class="tab-panel active">
+  <div class="g3">
+    <div class="card"><h3>Category distribution</h3><div class="cw" style="height:280px"><canvas id="cSub"></canvas></div></div>
+    <div class="card"><h3>Top hiring companies</h3><div class="cw" style="height:280px"><canvas id="cCo"></canvas></div></div>
+    <div class="card">
+      <h3>Market at a glance</h3>
+      <div class="cw" style="height:120px"><canvas id="cSrc"></canvas></div>
+      <div style="height:12px"></div>
+      <div class="cw" style="height:120px"><canvas id="cType"></canvas></div>
+    </div>
+  </div>
+  <div class="g2 mb0">
+    <div class="card"><h3>Generalist vs Specialist by category</h3><div class="cw" style="height:220px"><canvas id="cGS"></canvas></div></div>
+    <div class="card"><h3>AI skills required by category (% of listings)</h3><div class="cw" style="height:220px"><canvas id="cAICat"></canvas></div></div>
+  </div>
+</div>
+
+<!-- ROLES & SENIORITY -->
+<div id="tab-roles" class="tab-panel">
+  <div class="g3">
+    <div class="card"><h3>Seniority distribution</h3><div class="cw" style="height:220px"><canvas id="cSen"></canvas></div></div>
+    <div class="card"><h3>Generalist vs Specialist</h3><div class="cw" style="height:220px"><canvas id="cGSDist"></canvas></div></div>
+    <div class="card"><h3>Min. years experience required</h3><div class="cw" style="height:220px"><canvas id="cExp"></canvas></div></div>
+  </div>
+  <div class="g2 mb0">
+    <div class="card"><h3>Seniority by category (stacked)</h3><div class="cw" style="height:260px"><canvas id="cSenCat"></canvas></div></div>
+    <div class="card"><h3>Median salary by seniority (€/mo)</h3><div class="cw" style="height:260px"><canvas id="cSalSen"></canvas></div></div>
+  </div>
+</div>
+
+<!-- SALARY -->
+<div id="tab-salary" class="tab-panel">
+  <div class="g2">
+    <div class="card"><h3>Salary distribution — midpoint (€/mo gross)</h3><div class="cw" style="height:200px"><canvas id="cSalDist"></canvas></div></div>
+    <div class="card"><h3>Median salary by work arrangement</h3><div class="cw" style="height:200px"><canvas id="cSalType"></canvas></div></div>
+  </div>
+  <div class="g2 mb0">
+    <div class="card">
+      <h3>Median salary by category (€/mo)</h3>
+      <div id="salByCat" class="hb-rows" style="padding-top:2px"></div>
+    </div>
+    <div class="card"><h3>Average salary range by category (€/mo)</h3><div class="cw" style="height:280px"><canvas id="cSalRng"></canvas></div></div>
+  </div>
+</div>
+
+<!-- REQUIREMENTS -->
+<div id="tab-requirements" class="tab-panel">
+  <div class="g3">
+    <div class="card">
+      <h3>Key requirement flags</h3>
+      <div id="reqFlags" style="display:flex;flex-direction:column;gap:14px;padding-top:6px"></div>
+    </div>
+    <div class="card"><h3>AI skills required by seniority (%)</h3><div class="cw" style="height:220px"><canvas id="cAISen"></canvas></div></div>
+    <div class="card"><h3>AI skills: Generalist vs Specialist (%)</h3><div class="cw" style="height:220px"><canvas id="cAIGS"></canvas></div></div>
+  </div>
+  <div class="g2 mb0">
+    <div class="card"><h3>Min. experience by category — median years</h3><div class="cw" style="height:240px"><canvas id="cExpCat"></canvas></div></div>
+    <div class="card"><h3>Budget ownership by category (% of listings)</h3><div class="cw" style="height:240px"><canvas id="cBudCat"></canvas></div></div>
+  </div>
+</div>
+
+<!-- BENEFITS -->
+<div id="tab-benefits" class="tab-panel">
+  <div class="g2">
+    <div class="card">
+      <h3>Benefit prevalence — all listings</h3>
+      <div id="benRows" class="hb-rows" style="padding-top:4px"></div>
+    </div>
+    <div class="card"><h3>Benefits by source (%)</h3><div class="cw" style="height:280px"><canvas id="cBenSrc"></canvas></div></div>
+  </div>
+  <div class="g2 mb0">
+    <div class="card"><h3>Number of benefits per listing</h3><div class="cw" style="height:200px"><canvas id="cBenCount"></canvas></div></div>
+    <div class="card"><h3>Benefits: Generalist vs Specialist (%)</h3><div class="cw" style="height:200px"><canvas id="cBenGS"></canvas></div></div>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<div id="tab-skills" class="tab-panel">
+  <div class="card" style="margin-bottom:14px">
+    <h3>Skill cloud — click to filter listings</h3>
+    <div id="skillCloud" class="cloud"></div>
+  </div>
+  <div class="card">
+    <h3>Top 20 skills by frequency</h3>
+    <div class="cw" style="height:480px"><canvas id="cSkills"></canvas></div>
+  </div>
+  <div class="card mb0">
+    <h3>AI tools mentioned in job ads</h3>
+    <div class="cw" style="height:200px"><canvas id="cAITools"></canvas></div>
+  </div>
+</div>
+
+<!-- INSIGHTS -->
+<div id="tab-insights" class="tab-panel">
+  <div class="card mb0">
+    <h3>Generalist vs Specialist — pay gap</h3>
+    <p style="font-size:12px;color:var(--muted);margin:0 0 14px">Based on listings with salary disclosed. 32 listings (18%) had no salary published and are excluded.</p>
+    <table id="gsPayTable" style="width:100%;border-collapse:collapse;font-size:13px">
+      <thead>
+        <tr style="border-bottom:2px solid var(--fg)">
+          <th style="text-align:left;padding:7px 10px;font-weight:700"></th>
+          <th style="text-align:right;padding:7px 10px;font-weight:700">Generalist</th>
+          <th style="text-align:right;padding:7px 10px;font-weight:700">Specialist</th>
+          <th style="text-align:right;padding:7px 10px;font-weight:700;color:var(--muted)">Gap</th>
+        </tr>
+      </thead>
+      <tbody id="gsPayBody"></tbody>
+    </table>
+  </div>
+  <div class="card mb0" style="margin-top:14px">
+    <h3>AI skills required — pay gap</h3>
+    <p style="font-size:12px;color:var(--muted);margin:0 0 14px">32 listings required AI skills (18%). Based on listings with salary disclosed.</p>
+    <table style="width:100%;border-collapse:collapse;font-size:13px">
+      <thead>
+        <tr style="border-bottom:2px solid var(--fg)">
+          <th style="text-align:left;padding:7px 10px;font-weight:700"></th>
+          <th style="text-align:right;padding:7px 10px;font-weight:700">AI required</th>
+          <th style="text-align:right;padding:7px 10px;font-weight:700">No AI req.</th>
+          <th style="text-align:right;padding:7px 10px;font-weight:700;color:var(--muted)">Gap</th>
+        </tr>
+      </thead>
+      <tbody id="aiPayBody"></tbody>
+    </table>
+  </div>
+  <div class="card mb0" style="margin-top:14px">
+    <h3>AI × Generalist/Specialist — who is actually being asked to use AI?</h3>
+    <p style="font-size:12px;color:var(--muted);margin:0 0 14px">Cross-tab of AI requirement vs role type, with median salary per cell. n= shows listings with salary disclosed.</p>
+    <table style="width:100%;border-collapse:collapse;font-size:13px">
+      <thead>
+        <tr style="border-bottom:2px solid var(--fg)">
+          <th style="text-align:left;padding:7px 10px;font-weight:700"></th>
+          <th style="text-align:right;padding:7px 10px;font-weight:700">Generalist</th>
+          <th style="text-align:right;padding:7px 10px;font-weight:700">Specialist</th>
+        </tr>
+      </thead>
+      <tbody id="aiCrossBody"></tbody>
+    </table>
+    <div id="aiCrossNote" style="margin-top:16px;padding:12px 14px;background:#fafafa;border-left:3px solid #ccc;font-size:12px;color:#444;line-height:1.6"></div>
+  </div>
+  <div class="card mb0" style="margin-top:14px">
+    <h3>Pay vs Requirements matrix</h3>
+    <p style="font-size:12px;color:var(--muted);margin:0 0 4px">X = salary z-score within category (0 = category mean, ±1σ = one std dev) &nbsp;·&nbsp; Y = Requirements Index z-score (experience 35%, skill breadth 25%, degree 20%, budget ownership 12%, AI literacy 8%) &nbsp;·&nbsp; 148 listings with salary data</p>
+    <div style="display:flex;gap:12px;margin-bottom:12px;flex-wrap:wrap;font-size:11px;align-items:center">
+      <span style="font-weight:600">Colour:</span>
+      <span><span style="display:inline-block;width:10px;height:10px;background:#4472C4;border-radius:50%;margin-right:4px"></span>Specialist</span>
+      <span><span style="display:inline-block;width:10px;height:10px;background:#E07B39;border-radius:50%;margin-right:4px"></span>Generalist</span>
+      <span style="margin-left:8px;font-weight:600">Shape:</span>
+      <span>● No AI &nbsp; ★ AI required</span>
+      <select id="matFilter" style="margin-left:auto;font-size:11px;padding:3px 6px;border:var(--border);border-radius:var(--r);background:#fff">
+        <option value="">All roles</option>
+        <option value="Generalist">Generalist only</option>
+        <option value="Specialist">Specialist only</option>
+        <option value="ai">AI required only</option>
+      </select>
+    </div>
+    <div class="cw" style="height:480px"><canvas id="cMatrix"></canvas></div>
+    <div style="margin-top:10px;display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:11px">
+      <div style="padding:8px 12px;background:#fff8f0;border:1px solid #f0d9c0;border-radius:var(--r)">🔴 <strong>Underpaid</strong> — high requirements, below-median pay for category</div>
+      <div style="padding:8px 12px;background:#f0fff4;border:1px solid #b8e8c8;border-radius:var(--r)">🟢 <strong>Best value</strong> — above-median pay, low formal requirements</div>
+      <div style="padding:8px 12px;background:#f5f5f5;border:1px solid #e0e0e0;border-radius:var(--r)">⚪ <strong>Entry level</strong> — low pay, low requirements</div>
+      <div style="padding:8px 12px;background:#f0f4ff;border:1px solid #c0ccee;border-radius:var(--r)">🔵 <strong>Market rate</strong> — high pay, high requirements</div>
+    </div>
+  </div>
+</div>
+
+<!-- ALL LISTINGS -->
+<div id="tab-listings" class="tab-panel">
+  <div class="tc">
+    <input class="srch" id="srch" type="text" placeholder="Search title, company, skill…">
+    <select class="flt" id="fCat"><option value="">All categories</option></select>
+    <select class="flt" id="fSen"><option value="">All seniority</option><option>Junior</option><option>Mid</option><option>Senior</option><option>Lead</option><option>Head / Director</option></select>
+    <select class="flt" id="fGS"><option value="">Gen + Spec</option><option value="Generalist">Generalist</option><option value="Specialist">Specialist</option></select>
+    <select class="flt" id="fAI"><option value="">AI: all</option><option value="yes">AI required</option><option value="no">No AI req.</option></select>
+    <select class="flt" id="fSrc"><option value="">All sources</option><option>CV Bankas</option><option>CV Market</option><option>Unicorns.lt</option></select>
+    <select class="flt" id="fRem"><option value="">Remote: all</option><option value="yes">Remote</option><option value="no">On-site/hybrid</option></select>
+    <select class="flt" id="fSal"><option value="">Any salary</option><option value="has">Has salary</option></select>
+    <span class="tcount" id="tcount"></span>
+  </div>
+  <table id="tbl">
+    <thead><tr>
+      <th data-col="cat">Category</th>
+      <th data-col="seniority">Level</th>
+      <th data-col="gs">G/S</th>
+      <th data-col="sal_mid">Salary</th>
+      <th data-col="min_exp">Exp.</th>
+      <th data-col="ai">AI</th>
+      <th data-col="source">Source</th>
+    </tr></thead>
+    <tbody id="tbody"></tbody>
+  </table>
+  <div class="nores" id="nores" style="display:none">No listings match.</div>
+</div>
+
+</div><!-- .page -->
+
+<script>
+const DATA = [{"cat": "Brand & Communications", "sub": "Internal Communications", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": 5, "degree": false, "budget": false, "sal_low": 2600.0, "sal_high": 3890.0, "sal_mid": 3245, "sal_rng": 1290, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "", "skills": [], "b_health": true, "b_flex": true, "b_learn": false, "b_equity": false, "b_bonus": true, "b_sports": false, "b_vac": true, "y_req": -0.18, "x_sal": 0.15}, {"cat": "Marketing Management", "sub": "Marketing Management", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": null, "sal_high": 1750.0, "sal_mid": 1750, "sal_rng": null, "job_type": "part-time", "remote": false, "source": "CV Bankas", "location": "Kaune", "skills": ["Google Ads", "Meta Ads", "Google Analytics", "LinkedIn"], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": true, "b_sports": false, "b_vac": false, "y_req": -0.22, "x_sal": -1.28}, {"cat": "Marketing", "sub": "Marketing Generalist", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 1100.0, "sal_high": 1300.0, "sal_mid": 1200, "sal_rng": 200, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Vilniuje", "skills": ["Canva", "Adobe Creative"], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": true, "b_sports": false, "b_vac": false, "y_req": -0.66, "x_sal": -0.99}, {"cat": "Marketing", "sub": "Marketing Generalist", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 1700.0, "sal_high": null, "sal_mid": 1700, "sal_rng": null, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Kaune", "skills": [], "b_health": false, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": true, "b_sports": true, "b_vac": false, "y_req": -1.1, "x_sal": -0.45}, {"cat": "Marketing Management", "sub": "Marketing Management", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 1800.0, "sal_high": 3000.0, "sal_mid": 2400, "sal_rng": 1200, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Kaune", "skills": [], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": true, "b_sports": true, "b_vac": false, "y_req": -1.1, "x_sal": -0.69}, {"cat": "Product Marketing", "sub": "Product Marketing", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": 3, "degree": false, "budget": false, "sal_low": 3300.0, "sal_high": 4000.0, "sal_mid": 3650, "sal_rng": 700, "job_type": "hybrid", "remote": false, "source": "CV Bankas", "location": "Vilniuje", "skills": ["Brand Management", "PR", "Partnership Marketing"], "b_health": true, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": true, "b_vac": true, "y_req": -0.44, "x_sal": -0.02}, {"cat": "Marketing Management", "sub": "Marketing Management", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 3500.0, "sal_high": 4000.0, "sal_mid": 3750, "sal_rng": 500, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Vilniuje", "skills": ["LinkedIn"], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -0.88, "x_sal": 0.53}, {"cat": "Marketing Management", "sub": "Marketing Management", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 3000.0, "sal_high": 3500.0, "sal_mid": 3250, "sal_rng": 500, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Kaune", "skills": [], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -1.1, "x_sal": 0.08}, {"cat": "Content & Creative", "sub": "Creative / Design", "seniority": "Mid", "gs": "Specialist", "ai": true, "min_exp": null, "degree": false, "budget": false, "sal_low": 1400.0, "sal_high": 3000.0, "sal_mid": 2200, "sal_rng": 1600, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Vilniuje", "skills": ["Instagram", "Adobe Creative", "E-commerce"], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": true, "b_sports": false, "b_vac": false, "y_req": 0.61, "x_sal": -0.64}, {"cat": "Brand & Communications", "sub": "PR / Communications", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": 3, "degree": true, "budget": false, "sal_low": 3300.0, "sal_high": 4000.0, "sal_mid": 3650, "sal_rng": 700, "job_type": "full-time", "remote": true, "source": "CV Bankas", "location": "Vilniuje", "skills": ["Paid Social", "Email Marketing", "PR"], "b_health": true, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": true, "b_vac": true, "y_req": 2.19, "x_sal": 0.66}, {"cat": "Email & CRM", "sub": "Email Marketing", "seniority": "Senior", "gs": "Specialist", "ai": false, "min_exp": 2, "degree": false, "budget": false, "sal_low": 1800.0, "sal_high": 2000.0, "sal_mid": 1900, "sal_rng": 200, "job_type": "full-time", "remote": true, "source": "CV Bankas", "location": "Vilniuje", "skills": ["CRM", "A/B Testing", "Email Marketing", "Lifecycle Marketing"], "b_health": false, "b_flex": true, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -0.68, "x_sal": -1.07}, {"cat": "Digital Marketing", "sub": "Growth / Performance Marketing", "seniority": "Lead", "gs": "Specialist", "ai": false, "min_exp": 5, "degree": false, "budget": true, "sal_low": 3400.0, "sal_high": 4000.0, "sal_mid": 3700, "sal_rng": 600, "job_type": "hybrid", "remote": false, "source": "CV Bankas", "location": "Vilniuje", "skills": ["Google Ads", "Google Analytics", "GTM", "Looker", "YouTube", "A/B Testing", "CRO", "Performance Marketing", "Growth Marketing"], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": 2.5, "x_sal": 0.11}, {"cat": "Digital Marketing", "sub": "Digital Marketing Specialist", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 1200.0, "sal_high": 1500.0, "sal_mid": 1350, "sal_rng": 300, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Vilniuje", "skills": ["Google Ads", "Meta Ads", "Google Analytics", "LinkedIn", "Canva"], "b_health": true, "b_flex": true, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": true, "b_vac": false, "y_req": -0.0, "x_sal": -1.52}, {"cat": "Marketing", "sub": "Marketing Generalist", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": 1, "degree": false, "budget": false, "sal_low": 2000.0, "sal_high": null, "sal_mid": 2000, "sal_rng": null, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Kaune", "skills": [], "b_health": false, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": true, "b_sports": false, "b_vac": false, "y_req": -2.02, "x_sal": -0.13}, {"cat": "Marketing Management", "sub": "Marketing Management", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": 5, "degree": false, "budget": true, "sal_low": 5800.0, "sal_high": 6600.0, "sal_mid": 6200, "sal_rng": 800, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Vilniuje", "skills": ["Excel"], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": 1.62, "x_sal": 2.5}, {"cat": "Marketing", "sub": "Marketing Generalist", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": null, "degree": true, "budget": true, "sal_low": 4400.0, "sal_high": 6300.0, "sal_mid": 5350, "sal_rng": 1900, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Kaune", "skills": [], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": 2.5, "x_sal": 2.5}, {"cat": "Content & Creative", "sub": "Content Marketing", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 1300.0, "sal_high": 1800.0, "sal_mid": 1550, "sal_rng": 500, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Kaune", "skills": ["TikTok", "YouTube", "Canva", "Adobe Creative"], "b_health": false, "b_flex": true, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -0.22, "x_sal": -1.55}, {"cat": "Digital Marketing", "sub": "Digital Marketing Specialist", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": null, "degree": true, "budget": false, "sal_low": 2800.0, "sal_high": 3500.0, "sal_mid": 3150, "sal_rng": 700, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Vilniuje", "skills": [], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": true, "b_sports": false, "b_vac": false, "y_req": 1.53, "x_sal": -0.27}, {"cat": "Marketing Management", "sub": "Marketing Management", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 2500.0, "sal_high": 2800.0, "sal_mid": 2650, "sal_rng": 300, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Kaune", "skills": ["SEO", "LinkedIn", "Canva", "WordPress", "B2B Marketing"], "b_health": true, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -0.0, "x_sal": -0.46}, {"cat": "Marketing", "sub": "Marketing Generalist", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": 1, "degree": false, "budget": false, "sal_low": 1700.0, "sal_high": 3200.0, "sal_mid": 2450, "sal_rng": 1500, "job_type": "full-time", "remote": true, "source": "CV Bankas", "location": "Vilniuje", "skills": ["SEO"], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": true, "b_sports": false, "b_vac": false, "y_req": -1.8, "x_sal": 0.35}, {"cat": "Marketing Management", "sub": "Marketing Management", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": 5, "degree": false, "budget": false, "sal_low": 4000.0, "sal_high": 6000.0, "sal_mid": 5000, "sal_rng": 2000, "job_type": "full-time", "remote": true, "source": "CV Bankas", "location": "Vilniuje", "skills": [], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": true, "b_sports": false, "b_vac": false, "y_req": -0.18, "x_sal": 1.66}, {"cat": "Digital Marketing", "sub": "Growth / Performance Marketing", "seniority": "Head / Director", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 6500.0, "sal_high": 10000.0, "sal_mid": 8250, "sal_rng": 3500, "job_type": "hybrid", "remote": true, "source": "CV Bankas", "location": "Vilniuje", "skills": ["Paid Social", "Programmatic", "Performance Marketing"], "b_health": true, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": true, "b_sports": true, "b_vac": false, "y_req": -0.44, "x_sal": 2.5}, {"cat": "Social Media", "sub": "Social Media Management", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 2450.0, "sal_high": 3700.0, "sal_mid": 3075, "sal_rng": 1250, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Kaune", "skills": ["LinkedIn", "Canva"], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -0.66, "x_sal": 0.33}, {"cat": "Marketing Management", "sub": "Marketing Management", "seniority": "Mid", "gs": "Generalist", "ai": true, "min_exp": null, "degree": false, "budget": false, "sal_low": 1600.0, "sal_high": null, "sal_mid": 1600, "sal_rng": null, "job_type": "part-time", "remote": false, "source": "CV Bankas", "location": "Kaune", "skills": ["Meta Ads", "SEO", "Instagram", "TikTok"], "b_health": false, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": 0.83, "x_sal": -1.41}, {"cat": "Marketing Management", "sub": "Marketing Management", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 2100.0, "sal_high": null, "sal_mid": 2100, "sal_rng": null, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Kaune", "skills": ["Performance Marketing", "B2C Marketing"], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -0.66, "x_sal": -0.96}, {"cat": "Digital Marketing", "sub": "Digital Marketing Specialist", "seniority": "Mid", "gs": "Specialist", "ai": true, "min_exp": null, "degree": false, "budget": false, "sal_low": 3500.0, "sal_high": 4500.0, "sal_mid": 4000, "sal_rng": 1000, "job_type": "part-time", "remote": false, "source": "CV Bankas", "location": "Vilniuje", "skills": ["SEO", "UX"], "b_health": true, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": 0.39, "x_sal": 0.32}, {"cat": "Marketing", "sub": "Marketing Generalist", "seniority": "Mid", "gs": "Generalist", "ai": true, "min_exp": null, "degree": false, "budget": false, "sal_low": 3300.0, "sal_high": null, "sal_mid": 3300, "sal_rng": null, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Klaipėdoje", "skills": [], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -0.05, "x_sal": 1.26}, {"cat": "Marketing Management", "sub": "Marketing Management", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": 3, "degree": false, "budget": false, "sal_low": 1800.0, "sal_high": 2200.0, "sal_mid": 2000, "sal_rng": 400, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Klaipėdoje", "skills": ["B2B Marketing"], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -0.88, "x_sal": -1.05}, {"cat": "Marketing", "sub": "Marketing Generalist", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 1500.0, "sal_high": null, "sal_mid": 1500, "sal_rng": null, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Klaipėdoje", "skills": [], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": true, "b_sports": false, "b_vac": false, "y_req": -1.1, "x_sal": -0.67}, {"cat": "Marketing Management", "sub": "Marketing Management", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 2810.0, "sal_high": 2976.0, "sal_mid": 2893, "sal_rng": 166, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Klaipėdoje", "skills": ["Google Ads", "Meta Ads", "SEO"], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -0.44, "x_sal": -0.24}, {"cat": "Content & Creative", "sub": "Copywriting", "seniority": "Mid", "gs": "Specialist", "ai": true, "min_exp": 2, "degree": false, "budget": false, "sal_low": 2200.0, "sal_high": 3200.0, "sal_mid": 2700, "sal_rng": 1000, "job_type": "hybrid", "remote": false, "source": "CV Bankas", "location": "Vilniuje", "skills": ["PPC", "SEO", "Copywriting"], "b_health": true, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": true, "b_sports": false, "b_vac": true, "y_req": 0.15, "x_sal": 0.06}, {"cat": "Marketing", "sub": "Marketing Generalist", "seniority": "Junior", "gs": "Generalist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 1160.0, "sal_high": 1400.0, "sal_mid": 1280, "sal_rng": 240, "job_type": "internship", "remote": false, "source": "CV Bankas", "location": "Vilniuje", "skills": [], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -1.1, "x_sal": -0.9}, {"cat": "Marketing Management", "sub": "Marketing Management", "seniority": "Lead", "gs": "Generalist", "ai": true, "min_exp": 2, "degree": false, "budget": false, "sal_low": 1000.0, "sal_high": 3000.0, "sal_mid": 2000, "sal_rng": 2000, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Vilniuje", "skills": ["CRM", "HubSpot", "Salesforce", "LinkedIn Ads", "LinkedIn", "Canva", "Performance Marketing", "B2B Marketing"], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": true, "b_bonus": true, "b_sports": false, "b_vac": false, "y_req": 1.24, "x_sal": -1.05}, {"cat": "Content & Creative", "sub": "Content Marketing", "seniority": "Junior", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": null, "sal_high": null, "sal_mid": null, "sal_rng": null, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Vilniuje", "skills": ["SEO", "CRO", "UX"], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -0.44, "x_sal": null}, {"cat": "Marketing", "sub": "Marketing Generalist", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 1300.0, "sal_high": 1500.0, "sal_mid": 1400, "sal_rng": 200, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Kaune", "skills": ["Google Ads", "Meta Ads", "Adobe Creative"], "b_health": false, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -0.44, "x_sal": -0.78}, {"cat": "Marketing Management", "sub": "Marketing Management", "seniority": "Senior", "gs": "Generalist", "ai": false, "min_exp": 3, "degree": true, "budget": false, "sal_low": 2300.0, "sal_high": 2500.0, "sal_mid": 2400, "sal_rng": 200, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Vilniuje", "skills": ["SEM", "SEO", "Content Marketing", "Market Research", "E-commerce"], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": 2.5, "x_sal": -0.69}, {"cat": "Digital Marketing", "sub": "Digital Marketing Specialist", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": 3, "degree": false, "budget": false, "sal_low": 1350.0, "sal_high": 1600.0, "sal_mid": 1475, "sal_rng": 250, "job_type": "full-time", "remote": true, "source": "CV Bankas", "location": "Vilniuje", "skills": ["Google Ads", "SEO", "LinkedIn", "Instagram", "Canva"], "b_health": false, "b_flex": true, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -0.0, "x_sal": -1.44}, {"cat": "Marketing Management", "sub": "Marketing Management", "seniority": "Mid", "gs": "Generalist", "ai": true, "min_exp": null, "degree": false, "budget": false, "sal_low": 2500.0, "sal_high": 3400.0, "sal_mid": 2950, "sal_rng": 900, "job_type": "part-time", "remote": false, "source": "CV Bankas", "location": "Vilniuje", "skills": ["Google Ads", "SEO", "LinkedIn"], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": 0.61, "x_sal": -0.19}, {"cat": "Marketing Management", "sub": "Marketing Management", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": 3, "degree": true, "budget": false, "sal_low": 4000.0, "sal_high": null, "sal_mid": 4000, "sal_rng": null, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Vilniuje", "skills": [], "b_health": false, "b_flex": true, "b_learn": true, "b_equity": false, "b_bonus": true, "b_sports": false, "b_vac": false, "y_req": 1.53, "x_sal": 0.76}, {"cat": "Marketing Management", "sub": "Marketing Management", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": 5, "degree": false, "budget": false, "sal_low": 4000.0, "sal_high": 4500.0, "sal_mid": 4250, "sal_rng": 500, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Kaune", "skills": [], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -0.18, "x_sal": 0.98}, {"cat": "Brand & Communications", "sub": "PR / Communications", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": 3, "degree": false, "budget": false, "sal_low": 2200.0, "sal_high": 2500.0, "sal_mid": 2350, "sal_rng": 300, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Vilniuje", "skills": [], "b_health": true, "b_flex": true, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -1.1, "x_sal": -0.98}, {"cat": "Digital Marketing", "sub": "Growth / Performance Marketing", "seniority": "Mid", "gs": "Specialist", "ai": true, "min_exp": 2, "degree": false, "budget": false, "sal_low": 2700.0, "sal_high": 4000.0, "sal_mid": 3350, "sal_rng": 1300, "job_type": "hybrid", "remote": false, "source": "CV Bankas", "location": "Vilniuje", "skills": ["Google Ads", "Meta Ads", "Paid Social", "GTM", "Performance Marketing", "E-commerce"], "b_health": true, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": true, "b_sports": true, "b_vac": false, "y_req": 0.81, "x_sal": -0.13}, {"cat": "Social Media", "sub": "Social Media Management", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 1100.0, "sal_high": 1300.0, "sal_mid": 1200, "sal_rng": 200, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Vilniuje", "skills": ["Canva"], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -0.88, "x_sal": -1.15}, {"cat": "Marketing", "sub": "Marketing Generalist", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": 1, "degree": false, "budget": true, "sal_low": null, "sal_high": 1000.0, "sal_mid": 1000, "sal_rng": null, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Klaipėdoje", "skills": ["Meta Ads", "Instagram", "Canva"], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": 0.22, "x_sal": -1.2}, {"cat": "Content & Creative", "sub": "Creative / Design", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 1500.0, "sal_high": 2400.0, "sal_mid": 1950, "sal_rng": 900, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Vilniuje", "skills": ["Adobe Creative"], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -0.88, "x_sal": -0.99}, {"cat": "Marketing", "sub": "Marketing Generalist", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": 1, "degree": false, "budget": false, "sal_low": 2000.0, "sal_high": 2800.0, "sal_mid": 2400, "sal_rng": 800, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Vilniuje", "skills": [], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -2.02, "x_sal": 0.3}, {"cat": "Content & Creative", "sub": "Content Marketing", "seniority": "Mid", "gs": "Specialist", "ai": true, "min_exp": null, "degree": false, "budget": false, "sal_low": 1000.0, "sal_high": null, "sal_mid": 1000, "sal_rng": null, "job_type": "full-time", "remote": true, "source": "CV Bankas", "location": "Vilniuje", "skills": ["Canva", "Adobe Creative"], "b_health": false, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": 0.39, "x_sal": -2.31}, {"cat": "Brand & Communications", "sub": "Brand Marketing", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 3000.0, "sal_high": 3500.0, "sal_mid": 3250, "sal_rng": 500, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Vilniuje", "skills": ["Excel", "Brand Management", "Market Research"], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": true, "b_sports": false, "b_vac": false, "y_req": -0.44, "x_sal": 0.16}, {"cat": "Marketing Management", "sub": "Marketing Management", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": 2, "degree": false, "budget": false, "sal_low": 2440.0, "sal_high": 3000.0, "sal_mid": 2720, "sal_rng": 560, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Vilniuje", "skills": ["Google Ads", "Meta Ads", "SEO"], "b_health": false, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": true, "b_sports": false, "b_vac": false, "y_req": -0.9, "x_sal": -0.4}, {"cat": "Marketing Management", "sub": "Marketing Management", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 2600.0, "sal_high": 3000.0, "sal_mid": 2800, "sal_rng": 400, "job_type": "part-time", "remote": false, "source": "CV Bankas", "location": "Klaipėdoje", "skills": ["SEM", "SEO", "Google Analytics", "CRM"], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -0.22, "x_sal": -0.33}, {"cat": "Email & CRM", "sub": "Email Marketing", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": 5, "degree": false, "budget": false, "sal_low": 4000.0, "sal_high": 4300.0, "sal_mid": 4150, "sal_rng": 300, "job_type": "full-time", "remote": true, "source": "CV Bankas", "location": "Darbas namuose", "skills": ["UX", "Lifecycle Marketing", "B2B Marketing"], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": true, "b_sports": false, "b_vac": false, "y_req": 0.48, "x_sal": 0.83}, {"cat": "Content & Creative", "sub": "Content Marketing", "seniority": "Mid", "gs": "Specialist", "ai": true, "min_exp": 2, "degree": false, "budget": false, "sal_low": 1700.0, "sal_high": 2700.0, "sal_mid": 2200, "sal_rng": 1000, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Kaune", "skills": ["YouTube", "Canva", "Adobe Creative"], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": 0.15, "x_sal": -0.64}, {"cat": "Brand & Communications", "sub": "PR / Communications", "seniority": "Mid", "gs": "Specialist", "ai": true, "min_exp": null, "degree": false, "budget": false, "sal_low": 1500.0, "sal_high": 1800.0, "sal_mid": 1650, "sal_rng": 300, "job_type": "part-time", "remote": false, "source": "CV Bankas", "location": "Vilniuje", "skills": [], "b_health": false, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -0.05, "x_sal": -1.86}, {"cat": "Marketing", "sub": "Marketing Generalist", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": 2, "degree": false, "budget": false, "sal_low": 2200.0, "sal_high": 2600.0, "sal_mid": 2400, "sal_rng": 400, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Vilniuje", "skills": ["Email Marketing"], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -1.34, "x_sal": 0.3}, {"cat": "Marketing", "sub": "Marketing Generalist", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": 2, "degree": false, "budget": false, "sal_low": 1000.0, "sal_high": 1400.0, "sal_mid": 1200, "sal_rng": 400, "job_type": "part-time", "remote": false, "source": "CV Bankas", "location": "Kaune", "skills": ["Canva"], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -1.34, "x_sal": -0.99}, {"cat": "Digital Marketing", "sub": "PPC / Google Ads", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 2000.0, "sal_high": 3000.0, "sal_mid": 2500, "sal_rng": 1000, "job_type": "part-time", "remote": true, "source": "CV Bankas", "location": "Vilniuje", "skills": ["Google Ads", "Meta Ads", "Google Analytics", "TikTok", "YouTube", "A/B Testing"], "b_health": false, "b_flex": true, "b_learn": true, "b_equity": false, "b_bonus": true, "b_sports": false, "b_vac": false, "y_req": 0.22, "x_sal": -0.72}, {"cat": "SEO", "sub": "SEO Specialist / Manager", "seniority": "Senior", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": true, "sal_low": 2800.0, "sal_high": null, "sal_mid": 2800, "sal_rng": null, "job_type": "full-time", "remote": true, "source": "CV Bankas", "location": "Vilniuje", "skills": ["SEO", "Google Analytics"], "b_health": true, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": true, "b_vac": false, "y_req": 0.92, "x_sal": -0.57}, {"cat": "Digital Marketing", "sub": "Digital Marketing Specialist", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 1300.0, "sal_high": 1900.0, "sal_mid": 1600, "sal_rng": 600, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Vilniuje", "skills": ["Google Analytics", "Excel"], "b_health": false, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": true, "y_req": -0.66, "x_sal": -1.35}, {"cat": "SEO", "sub": "SEO Specialist / Manager", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": 3, "degree": false, "budget": false, "sal_low": 2800.0, "sal_high": 3800.0, "sal_mid": 3300, "sal_rng": 1000, "job_type": "hybrid", "remote": false, "source": "CV Bankas", "location": "Vilniuje", "skills": ["SEO", "Technical SEO", "Google Analytics", "Looker", "Data Studio", "CRM", "WordPress", "Webflow", "Email Marketing", "Content Marketing", "B2B Marketing", "SaaS"], "b_health": true, "b_flex": true, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": 1.53, "x_sal": -0.04}, {"cat": "Marketing", "sub": "Marketing Generalist", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": 2, "degree": true, "budget": false, "sal_low": 1500.0, "sal_high": 2000.0, "sal_mid": 1750, "sal_rng": 500, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Vilniuje", "skills": [], "b_health": false, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": 1.07, "x_sal": -0.4}, {"cat": "Content & Creative", "sub": "Copywriting", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": 2, "degree": false, "budget": false, "sal_low": 2000.0, "sal_high": 2400.0, "sal_mid": 2200, "sal_rng": 400, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Vilniuje", "skills": ["PPC", "Email Marketing", "Copywriting", "Market Research", "E-commerce"], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -0.46, "x_sal": -0.64}, {"cat": "Digital Marketing", "sub": "Digital Marketing Specialist", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": 2, "degree": false, "budget": false, "sal_low": 2800.0, "sal_high": null, "sal_mid": 2800, "sal_rng": null, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "", "skills": ["Google Ads", "PPC", "Google Analytics", "Looker", "Excel", "Data Studio", "Performance Marketing", "E-commerce"], "b_health": true, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": true, "b_sports": false, "b_vac": false, "y_req": 0.19, "x_sal": -0.51}, {"cat": "E-commerce", "sub": "E-commerce Marketing", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": 2, "degree": false, "budget": false, "sal_low": 2600.0, "sal_high": 3000.0, "sal_mid": 2800, "sal_rng": 400, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Kaune", "skills": ["Meta Ads", "Instagram", "TikTok", "E-commerce"], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": true, "b_sports": false, "b_vac": false, "y_req": -0.68, "x_sal": 0.71}, {"cat": "Marketing", "sub": "Marketing Generalist", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 2000.0, "sal_high": 2400.0, "sal_mid": 2200, "sal_rng": 400, "job_type": "full-time", "remote": true, "source": "CV Bankas", "location": "Darbas namuose", "skills": ["SEO", "UX"], "b_health": false, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -0.66, "x_sal": 0.08}, {"cat": "Marketing", "sub": "Marketing Generalist", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": 2, "degree": false, "budget": false, "sal_low": 2200.0, "sal_high": 2700.0, "sal_mid": 2450, "sal_rng": 500, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Kaune", "skills": ["SEO"], "b_health": false, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -1.34, "x_sal": 0.35}, {"cat": "Marketing", "sub": "Marketing Generalist", "seniority": "Mid", "gs": "Generalist", "ai": true, "min_exp": null, "degree": false, "budget": false, "sal_low": 1700.0, "sal_high": 2000.0, "sal_mid": 1850, "sal_rng": 300, "job_type": "part-time", "remote": false, "source": "CV Bankas", "location": "Kaune", "skills": ["Canva"], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": 0.17, "x_sal": -0.29}, {"cat": "Email & CRM", "sub": "Email Marketing", "seniority": "Junior", "gs": "Specialist", "ai": false, "min_exp": 15, "degree": false, "budget": false, "sal_low": null, "sal_high": 1210.0, "sal_mid": 1210, "sal_rng": null, "job_type": "internship", "remote": false, "source": "CV Bankas", "location": "Vilniuje", "skills": ["Email Marketing", "E-commerce"], "b_health": false, "b_flex": true, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": 2.5, "x_sal": -1.66}, {"cat": "Email & CRM", "sub": "Email Marketing", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": 2, "degree": false, "budget": false, "sal_low": 2530.0, "sal_high": 3790.0, "sal_mid": 3160, "sal_rng": 1260, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Vilniuje", "skills": ["Klaviyo", "Email Marketing", "Lifecycle Marketing", "E-commerce"], "b_health": true, "b_flex": true, "b_learn": true, "b_equity": false, "b_bonus": true, "b_sports": false, "b_vac": true, "y_req": -0.68, "x_sal": -0.01}, {"cat": "Email & CRM", "sub": "Email Marketing", "seniority": "Senior", "gs": "Specialist", "ai": false, "min_exp": 4, "degree": false, "budget": false, "sal_low": 3280.0, "sal_high": 4920.0, "sal_mid": 4100, "sal_rng": 1640, "job_type": "full-time", "remote": true, "source": "CV Bankas", "location": "Darbas namuose", "skills": ["Klaviyo", "Email Marketing", "Lifecycle Marketing", "E-commerce"], "b_health": true, "b_flex": true, "b_learn": true, "b_equity": false, "b_bonus": true, "b_sports": false, "b_vac": true, "y_req": 0.24, "x_sal": 0.79}, {"cat": "E-commerce", "sub": "E-commerce Marketing", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 1300.0, "sal_high": null, "sal_mid": 1300, "sal_rng": null, "job_type": "full-time", "remote": true, "source": "CV Bankas", "location": "Vilniuje", "skills": [], "b_health": false, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": true, "b_sports": false, "b_vac": false, "y_req": -1.1, "x_sal": -0.71}, {"cat": "Content & Creative", "sub": "Creative / Design", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 2200.0, "sal_high": null, "sal_mid": 2200, "sal_rng": null, "job_type": "part-time", "remote": false, "source": "CV Bankas", "location": "Vilniuje", "skills": ["TikTok", "E-commerce"], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -0.66, "x_sal": -0.64}, {"cat": "Marketing Management", "sub": "Marketing Management", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": 5, "degree": false, "budget": true, "sal_low": 3306.0, "sal_high": 4133.0, "sal_mid": 3720, "sal_rng": 827, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Vilniuje", "skills": [], "b_health": true, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": 1.4, "x_sal": 0.5}, {"cat": "Marketing", "sub": "Marketing Generalist", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 1750.0, "sal_high": 2250.0, "sal_mid": 2000, "sal_rng": 500, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Vilniuje", "skills": ["Canva", "Adobe Creative"], "b_health": true, "b_flex": true, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -0.66, "x_sal": -0.13}, {"cat": "Product Marketing", "sub": "Product Marketing", "seniority": "Mid", "gs": "Specialist", "ai": true, "min_exp": 3, "degree": false, "budget": false, "sal_low": 4000.0, "sal_high": null, "sal_mid": 4000, "sal_rng": null, "job_type": "full-time", "remote": true, "source": "CV Bankas", "location": "Vilniuje", "skills": ["CRM", "HubSpot", "Content Marketing", "SaaS", "E-commerce"], "b_health": true, "b_flex": true, "b_learn": true, "b_equity": true, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": 1.05, "x_sal": 0.78}, {"cat": "Marketing Management", "sub": "Marketing Management", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 3500.0, "sal_high": 4000.0, "sal_mid": 3750, "sal_rng": 500, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Vilniuje", "skills": ["CRM", "LinkedIn", "YouTube"], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -0.44, "x_sal": 0.53}, {"cat": "Marketing", "sub": "Marketing Generalist", "seniority": "Junior", "gs": "Generalist", "ai": true, "min_exp": null, "degree": false, "budget": false, "sal_low": null, "sal_high": null, "sal_mid": null, "sal_rng": null, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "", "skills": [], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -0.05, "x_sal": null}, {"cat": "Marketing Management", "sub": "Marketing Management", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": 1, "degree": false, "budget": true, "sal_low": 2800.0, "sal_high": 3500.0, "sal_mid": 3150, "sal_rng": 700, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Vilniuje", "skills": [], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -0.44, "x_sal": -0.01}, {"cat": "Marketing Management", "sub": "Marketing Management", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 2800.0, "sal_high": 3700.0, "sal_mid": 3250, "sal_rng": 900, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Kaune", "skills": ["B2C Marketing"], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -0.88, "x_sal": 0.08}, {"cat": "Marketing Management", "sub": "Marketing Management", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 3300.0, "sal_high": 3800.0, "sal_mid": 3550, "sal_rng": 500, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Vilniuje", "skills": ["LinkedIn", "Canva", "Adobe Creative"], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -0.44, "x_sal": 0.35}, {"cat": "Brand & Communications", "sub": "Brand Marketing", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 4000.0, "sal_high": 4500.0, "sal_mid": 4250, "sal_rng": 500, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Vilniuje", "skills": [], "b_health": true, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -1.1, "x_sal": 1.42}, {"cat": "Marketing Management", "sub": "Marketing Management", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": null, "degree": false, "budget": true, "sal_low": 2900.0, "sal_high": 3500.0, "sal_mid": 3200, "sal_rng": 600, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Vilniuje", "skills": [], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": 0.48, "x_sal": 0.03}, {"cat": "Marketing Management", "sub": "Marketing Management", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 1100.0, "sal_high": 1600.0, "sal_mid": 1350, "sal_rng": 500, "job_type": "full-time", "remote": true, "source": "CV Bankas", "location": "Vilniuje", "skills": ["CRM", "WordPress"], "b_health": false, "b_flex": true, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -0.66, "x_sal": -1.64}, {"cat": "Social Media", "sub": "Social Media Management", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 1200.0, "sal_high": 1799.0, "sal_mid": 1500, "sal_rng": 599, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Vilniuje", "skills": ["LinkedIn", "Instagram", "TikTok", "Copywriting"], "b_health": true, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -0.22, "x_sal": -0.91}, {"cat": "Digital Marketing", "sub": "Digital Marketing Specialist", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 2300.0, "sal_high": 3000.0, "sal_mid": 2650, "sal_rng": 700, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "", "skills": ["Google Ads", "SEM", "SEO", "Google Analytics", "CRM", "Figma", "A/B Testing", "UX", "Content Marketing"], "b_health": true, "b_flex": true, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": 0.87, "x_sal": -0.62}, {"cat": "Marketing", "sub": "Marketing Generalist", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": 2, "degree": false, "budget": false, "sal_low": 1300.0, "sal_high": 1500.0, "sal_mid": 1400, "sal_rng": 200, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Šiauliuose", "skills": ["LinkedIn"], "b_health": false, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -1.34, "x_sal": -0.78}, {"cat": "Marketing", "sub": "Marketing Generalist", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": 2, "degree": false, "budget": false, "sal_low": 2000.0, "sal_high": 2200.0, "sal_mid": 2100, "sal_rng": 200, "job_type": "full-time", "remote": true, "source": "CV Bankas", "location": "Kaune", "skills": ["Canva"], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -1.34, "x_sal": -0.02}, {"cat": "Digital Marketing", "sub": "Digital Marketing Specialist", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": 5, "degree": false, "budget": false, "sal_low": 4205.0, "sal_high": 5046.0, "sal_mid": 4626, "sal_rng": 841, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Vilniuje", "skills": ["Google Ads", "Meta Ads", "SEO", "Google Analytics", "Mailchimp", "Klaviyo", "A/B Testing", "E-commerce"], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": 1.57, "x_sal": 0.76}, {"cat": "Marketing", "sub": "Marketing Generalist", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 3000.0, "sal_high": 3800.0, "sal_mid": 3400, "sal_rng": 800, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Vilniuje", "skills": [], "b_health": false, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -1.1, "x_sal": 1.37}, {"cat": "SEO", "sub": "SEO Specialist / Manager", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 2500.0, "sal_high": null, "sal_mid": 2500, "sal_rng": null, "job_type": "full-time", "remote": true, "source": "CV Bankas", "location": "Kaune", "skills": ["SEO"], "b_health": false, "b_flex": true, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": true, "y_req": -0.88, "x_sal": -0.88}, {"cat": "Marketing", "sub": "Marketing Generalist", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": 2, "degree": false, "budget": false, "sal_low": 2800.0, "sal_high": 3300.0, "sal_mid": 3050, "sal_rng": 500, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Vilniuje", "skills": [], "b_health": false, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -1.56, "x_sal": 1.0}, {"cat": "Email & CRM", "sub": "CRM / Marketing Automation", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": null, "degree": true, "budget": false, "sal_low": 2300.0, "sal_high": 2900.0, "sal_mid": 2600, "sal_rng": 600, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Vilniuje", "skills": ["CRM"], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": 1.75, "x_sal": -0.48}, {"cat": "Marketing Management", "sub": "Marketing Management", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": 3, "degree": true, "budget": false, "sal_low": 4200.0, "sal_high": 4800.0, "sal_mid": 4500, "sal_rng": 600, "job_type": "full-time", "remote": false, "source": "CV Bankas", "location": "Kaune", "skills": [], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": 1.53, "x_sal": 1.21}, {"cat": "Marketing", "sub": "Marketing Generalist", "seniority": "Mid", "gs": "Generalist", "ai": true, "min_exp": null, "degree": false, "budget": false, "sal_low": 1400.0, "sal_high": 2500.0, "sal_mid": 1950, "sal_rng": 1100, "job_type": "full-time", "remote": false, "source": "CV Market", "location": "Rodyti darbo skelbimus: Visi darbo skelbimai Naujausi darbo skelbimai Pagal kategoriją Pagal miestą Darbas pagal įmonę Darbas užsienyje Praktikantas / Stažuotojas Sezoninio darbo pasiūlymai Rasti konkretų skelbimą: Detali paieška Susikurti skelbimų prenumeratą Išsaugoti skelbimai ( 0 )", "skills": ["Google Ads", "Google Analytics", "GTM", "LinkedIn", "Canva", "Adobe Creative", "A/B Testing"], "b_health": false, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": 1.49, "x_sal": -0.18}, {"cat": "Digital Marketing", "sub": "Digital Marketing Specialist", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 2300.0, "sal_high": 3000.0, "sal_mid": 2650, "sal_rng": 700, "job_type": "full-time", "remote": false, "source": "CV Market", "location": "Rodyti darbo skelbimus: Visi darbo skelbimai Naujausi darbo skelbimai Pagal kategoriją Pagal miestą Darbas pagal įmonę Darbas užsienyje Praktikantas / Stažuotojas Sezoninio darbo pasiūlymai Rasti konkretų skelbimą: Detali paieška Susikurti skelbimų prenumeratą Išsaugoti skelbimai ( 0 )", "skills": [], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -1.1, "x_sal": -0.62}, {"cat": "Marketing Management", "sub": "Marketing Management", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": null, "degree": false, "budget": true, "sal_low": 2244.0, "sal_high": 2441.0, "sal_mid": 2342, "sal_rng": 197, "job_type": "full-time", "remote": false, "source": "CV Market", "location": "Rodyti darbo skelbimus: Visi darbo skelbimai Naujausi darbo skelbimai Pagal kategoriją Pagal miestą Darbas pagal įmonę Darbas užsienyje Praktikantas / Stažuotojas Sezoninio darbo pasiūlymai Rasti konkretų skelbimą: Detali paieška Susikurti skelbimų prenumeratą Išsaugoti skelbimai ( 0 )", "skills": [], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": 0.48, "x_sal": -0.74}, {"cat": "Marketing Management", "sub": "Marketing Management", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 4680.0, "sal_high": 4885.0, "sal_mid": 4782, "sal_rng": 205, "job_type": "full-time", "remote": false, "source": "CV Market", "location": "Rodyti darbo skelbimus: Visi darbo skelbimai Naujausi darbo skelbimai Pagal kategoriją Pagal miestą Darbas pagal įmonę Darbas užsienyje Praktikantas / Stažuotojas Sezoninio darbo pasiūlymai Rasti konkretų skelbimą: Detali paieška Susikurti skelbimų prenumeratą Išsaugoti skelbimai ( 0 )", "skills": ["PPC", "SEO"], "b_health": false, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": true, "b_sports": false, "b_vac": false, "y_req": -0.66, "x_sal": 1.47}, {"cat": "Marketing", "sub": "Marketing Generalist", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 1356.22, "sal_high": 1400.0, "sal_mid": 1378, "sal_rng": 44, "job_type": "full-time", "remote": false, "source": "CV Market", "location": "Rodyti darbo skelbimus: Visi darbo skelbimai Naujausi darbo skelbimai Pagal kategoriją Pagal miestą Darbas pagal įmonę Darbas užsienyje Praktikantas / Stažuotojas Sezoninio darbo pasiūlymai Rasti konkretų skelbimą: Detali paieška Susikurti skelbimų prenumeratą Išsaugoti skelbimai ( 0 )", "skills": [], "b_health": false, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -1.1, "x_sal": -0.8}, {"cat": "SEO", "sub": "SEO Specialist / Manager", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 2700.0, "sal_high": null, "sal_mid": 2700, "sal_rng": null, "job_type": "full-time", "remote": false, "source": "CV Market", "location": "Rodyti darbo skelbimus: Visi darbo skelbimai Naujausi darbo skelbimai Pagal kategoriją Pagal miestą Darbas pagal įmonę Darbas užsienyje Praktikantas / Stažuotojas Sezoninio darbo pasiūlymai Rasti konkretų skelbimą: Detali paieška Susikurti skelbimų prenumeratą Išsaugoti skelbimai ( 0 )", "skills": ["SEO", "Google Analytics", "Looker", "Python", "Excel", "Data Studio", "WordPress", "Shopify"], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": 0.65, "x_sal": -0.67}, {"cat": "Digital Marketing", "sub": "Digital Marketing Specialist", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 2700.0, "sal_high": null, "sal_mid": 2700, "sal_rng": null, "job_type": "full-time", "remote": false, "source": "CV Market", "location": "Rodyti darbo skelbimus: Visi darbo skelbimai Naujausi darbo skelbimai Pagal kategoriją Pagal miestą Darbas pagal įmonę Darbas užsienyje Praktikantas / Stažuotojas Sezoninio darbo pasiūlymai Rasti konkretų skelbimą: Detali paieška Susikurti skelbimų prenumeratą Išsaugoti skelbimai ( 0 )", "skills": [], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -1.1, "x_sal": -0.58}, {"cat": "Marketing", "sub": "Marketing Generalist", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 2000.0, "sal_high": 2700.0, "sal_mid": 2350, "sal_rng": 700, "job_type": "full-time", "remote": false, "source": "CV Market", "location": "Rodyti darbo skelbimus: Visi darbo skelbimai Naujausi darbo skelbimai Pagal kategoriją Pagal miestą Darbas pagal įmonę Darbas užsienyje Praktikantas / Stažuotojas Sezoninio darbo pasiūlymai Rasti konkretų skelbimą: Detali paieška Susikurti skelbimų prenumeratą Išsaugoti skelbimai ( 0 )", "skills": [], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -1.1, "x_sal": 0.24}, {"cat": "Affiliate & Partnerships", "sub": "Affiliate Marketing", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": 4, "degree": false, "budget": false, "sal_low": null, "sal_high": null, "sal_mid": null, "sal_rng": null, "job_type": "remote", "remote": true, "source": "Unicorns.lt", "location": "Remote / Kaunas", "skills": ["Affiliate Marketing", "E-commerce"], "b_health": false, "b_flex": false, "b_learn": true, "b_equity": true, "b_bonus": true, "b_sports": false, "b_vac": false, "y_req": -0.2, "x_sal": null}, {"cat": "Digital Marketing", "sub": "PPC / Google Ads", "seniority": "Mid", "gs": "Specialist", "ai": true, "min_exp": null, "degree": false, "budget": false, "sal_low": null, "sal_high": null, "sal_mid": null, "sal_rng": null, "job_type": "remote", "remote": true, "source": "Unicorns.lt", "location": "Remote", "skills": ["Google Ads", "E-commerce"], "b_health": false, "b_flex": false, "b_learn": true, "b_equity": true, "b_bonus": true, "b_sports": false, "b_vac": false, "y_req": 0.39, "x_sal": null}, {"cat": "Digital Marketing", "sub": "PPC / Google Ads", "seniority": "Lead", "gs": "Specialist", "ai": true, "min_exp": null, "degree": false, "budget": false, "sal_low": null, "sal_high": null, "sal_mid": null, "sal_rng": null, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Lithuania", "skills": ["Google Ads", "Performance Marketing", "E-commerce"], "b_health": false, "b_flex": false, "b_learn": true, "b_equity": true, "b_bonus": true, "b_sports": false, "b_vac": false, "y_req": 0.61, "x_sal": null}, {"cat": "Marketing", "sub": "Marketing Generalist", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": 1, "degree": false, "budget": false, "sal_low": null, "sal_high": null, "sal_mid": null, "sal_rng": null, "job_type": "full-time", "remote": false, "source": "Unicorns.lt", "location": "Kaunas", "skills": ["SEO", "Content Marketing", "E-commerce"], "b_health": false, "b_flex": false, "b_learn": true, "b_equity": true, "b_bonus": true, "b_sports": false, "b_vac": false, "y_req": -1.36, "x_sal": null}, {"cat": "Content & Creative", "sub": "Creative / Design", "seniority": "Mid", "gs": "Specialist", "ai": true, "min_exp": 2, "degree": false, "budget": false, "sal_low": null, "sal_high": null, "sal_mid": null, "sal_rng": null, "job_type": "remote", "remote": true, "source": "Unicorns.lt", "location": "Remote", "skills": ["Paid Social", "TikTok", "Performance Marketing", "Growth Marketing"], "b_health": false, "b_flex": false, "b_learn": true, "b_equity": true, "b_bonus": true, "b_sports": false, "b_vac": false, "y_req": 0.37, "x_sal": null}, {"cat": "Content & Creative", "sub": "Content Marketing", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 2800.0, "sal_high": 3600.0, "sal_mid": 3200, "sal_rng": 800, "job_type": "full-time", "remote": false, "source": "Unicorns.lt", "location": "Vilnius", "skills": [], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -1.1, "x_sal": 0.75}, {"cat": "SEO", "sub": "SEO Specialist / Manager", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": 3, "degree": false, "budget": false, "sal_low": null, "sal_high": null, "sal_mid": null, "sal_rng": null, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "", "skills": ["SEO", "Technical SEO", "Google Analytics", "Looker", "Data Studio", "CRM", "WordPress", "Webflow", "Email Marketing", "Content Marketing", "B2B Marketing", "SaaS"], "b_health": true, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": 1.53, "x_sal": null}, {"cat": "Affiliate & Partnerships", "sub": "Affiliate Marketing", "seniority": "Mid", "gs": "Specialist", "ai": true, "min_exp": 3, "degree": false, "budget": false, "sal_low": null, "sal_high": null, "sal_mid": null, "sal_rng": null, "job_type": "remote", "remote": true, "source": "Unicorns.lt", "location": "Paris / Brussels / Marseille / Lyon / Thiais / Bordeaux / Montpellier / Nantes / Rennes / Strasbourg / Toulouse", "skills": ["Affiliate Marketing", "Performance Marketing"], "b_health": false, "b_flex": true, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": true, "b_vac": false, "y_req": 0.39, "x_sal": null}, {"cat": "Affiliate & Partnerships", "sub": "Affiliate Marketing", "seniority": "Lead", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": null, "sal_high": null, "sal_mid": null, "sal_rng": null, "job_type": "remote", "remote": true, "source": "Unicorns.lt", "location": "Warsaw / Barcelona / Bucharest / Bulgaria / Krakow / Lisbon / Madrid / Milan / Porto / Valencia / Riga / Tallinn", "skills": ["PPC", "SEO", "CRO"], "b_health": false, "b_flex": true, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": true, "b_vac": false, "y_req": -0.44, "x_sal": null}, {"cat": "Affiliate & Partnerships", "sub": "Affiliate Marketing", "seniority": "Lead", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 4000.0, "sal_high": null, "sal_mid": 4000, "sal_rng": null, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius / Kaunas", "skills": ["PPC", "SEO", "CRO"], "b_health": true, "b_flex": true, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": true, "b_vac": false, "y_req": -0.44, "x_sal": 0.71}, {"cat": "Content & Creative", "sub": "Content Marketing", "seniority": "Mid", "gs": "Specialist", "ai": true, "min_exp": 3, "degree": false, "budget": false, "sal_low": 2500.0, "sal_high": 3500.0, "sal_mid": 3000, "sal_rng": 1000, "job_type": "remote", "remote": true, "source": "Unicorns.lt", "location": "Warsaw / Krakow / Lodz / Barcelona / Madrid", "skills": ["SEO", "Content Marketing", "Affiliate Marketing", "SaaS"], "b_health": false, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": 0.83, "x_sal": 0.47}, {"cat": "Content & Creative", "sub": "Content Marketing", "seniority": "Mid", "gs": "Specialist", "ai": true, "min_exp": 3, "degree": false, "budget": false, "sal_low": 2500.0, "sal_high": 3500.0, "sal_mid": 3000, "sal_rng": 1000, "job_type": "remote", "remote": true, "source": "Unicorns.lt", "location": "Vilnius / Kaunas", "skills": ["SEO", "Content Marketing", "Affiliate Marketing", "SaaS"], "b_health": false, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": 0.83, "x_sal": 0.47}, {"cat": "SEO", "sub": "SEO Specialist / Manager", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": 3, "degree": false, "budget": false, "sal_low": null, "sal_high": null, "sal_mid": null, "sal_rng": null, "job_type": "remote", "remote": true, "source": "Unicorns.lt", "location": "Warsaw / Barcelona / Lisbon / Prague / Zagreb", "skills": ["SEO", "Technical SEO", "Google Analytics", "Content Marketing"], "b_health": false, "b_flex": true, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": true, "b_vac": false, "y_req": -0.22, "x_sal": null}, {"cat": "Analytics & Data", "sub": "Marketing Analytics", "seniority": "Mid", "gs": "Specialist", "ai": true, "min_exp": 2, "degree": false, "budget": false, "sal_low": 4000.0, "sal_high": null, "sal_mid": 4000, "sal_rng": null, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius / Kaunas", "skills": ["Tableau", "SQL", "Python", "Amplitude", "A/B Testing"], "b_health": true, "b_flex": true, "b_learn": true, "b_equity": false, "b_bonus": true, "b_sports": true, "b_vac": false, "y_req": 0.59, "x_sal": -0.3}, {"cat": "SEO", "sub": "SEO Specialist / Manager", "seniority": "Head / Director", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 5500.0, "sal_high": null, "sal_mid": 5500, "sal_rng": null, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius / Kaunas", "skills": ["SEO", "Technical SEO", "YouTube"], "b_health": true, "b_flex": true, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": true, "b_vac": false, "y_req": -0.44, "x_sal": 2.3}, {"cat": "SEO", "sub": "SEO Specialist / Manager", "seniority": "Head / Director", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": null, "sal_high": null, "sal_mid": null, "sal_rng": null, "job_type": "remote", "remote": true, "source": "Unicorns.lt", "location": "Barcelona / Madrid / Warsaw / Krakow / London", "skills": ["SEO", "Technical SEO", "YouTube"], "b_health": false, "b_flex": true, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": true, "b_vac": false, "y_req": -0.44, "x_sal": null}, {"cat": "Analytics & Data", "sub": "Marketing Analytics", "seniority": "Lead", "gs": "Specialist", "ai": false, "min_exp": 5, "degree": false, "budget": false, "sal_low": 5500.0, "sal_high": null, "sal_mid": 5500, "sal_rng": null, "job_type": "remote", "remote": true, "source": "Unicorns.lt", "location": "Vilnius / Kaunas / Warsaw / Krakow / Gdansk / Poznan / Riga / Tallinn", "skills": ["Google Analytics", "GTM", "SQL", "Amplitude", "UX"], "b_health": false, "b_flex": true, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": true, "b_vac": false, "y_req": 0.92, "x_sal": 1.05}, {"cat": "Email & CRM", "sub": "Email Marketing", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": null, "sal_high": null, "sal_mid": null, "sal_rng": null, "job_type": "remote", "remote": true, "source": "Unicorns.lt", "location": "Warsaw / Krakow / Riga / Berlin / Barcelona", "skills": ["CRM", "HubSpot", "Braze", "Iterable", "A/B Testing", "Email Marketing", "Copywriting", "Lifecycle Marketing"], "b_health": false, "b_flex": true, "b_learn": true, "b_equity": false, "b_bonus": true, "b_sports": true, "b_vac": false, "y_req": 0.65, "x_sal": null}, {"cat": "Email & CRM", "sub": "Email Marketing", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 3300.0, "sal_high": 5800.0, "sal_mid": 4550, "sal_rng": 2500, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius / Kaunas", "skills": ["CRM", "HubSpot", "Braze", "Iterable", "A/B Testing", "Email Marketing", "Copywriting", "Lifecycle Marketing"], "b_health": true, "b_flex": true, "b_learn": true, "b_equity": false, "b_bonus": true, "b_sports": true, "b_vac": false, "y_req": 0.65, "x_sal": 1.17}, {"cat": "Analytics & Data", "sub": "Marketing Analytics", "seniority": "Lead", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 6000.0, "sal_high": null, "sal_mid": 6000, "sal_rng": null, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius", "skills": ["PPC", "SEO", "Tableau", "SQL"], "b_health": true, "b_flex": true, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": true, "b_vac": false, "y_req": -0.22, "x_sal": 1.5}, {"cat": "Digital Marketing", "sub": "PPC / Google Ads", "seniority": "Senior", "gs": "Specialist", "ai": true, "min_exp": null, "degree": false, "budget": false, "sal_low": 2500.0, "sal_high": 4600.0, "sal_mid": 3550, "sal_rng": 2100, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius / Kaunas", "skills": ["Google Ads", "Meta Ads", "PPC", "Google Analytics", "Looker", "Data Studio", "YouTube"], "b_health": true, "b_flex": true, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": true, "b_vac": false, "y_req": 1.49, "x_sal": 0.01}, {"cat": "Digital Marketing", "sub": "PPC / Google Ads", "seniority": "Lead", "gs": "Specialist", "ai": true, "min_exp": null, "degree": false, "budget": false, "sal_low": 4900.0, "sal_high": null, "sal_mid": 4900, "sal_rng": null, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius / Kaunas", "skills": ["Google Ads", "PPC", "YouTube", "Growth Marketing"], "b_health": true, "b_flex": true, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": true, "b_vac": false, "y_req": 0.83, "x_sal": 0.95}, {"cat": "Product Marketing", "sub": "Product Marketing", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": 2, "degree": false, "budget": false, "sal_low": 4100.0, "sal_high": null, "sal_mid": 4100, "sal_rng": null, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius / Kaunas", "skills": ["Performance Marketing"], "b_health": true, "b_flex": true, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": true, "b_vac": false, "y_req": -1.34, "x_sal": 1.01}, {"cat": "Content & Creative", "sub": "Content Marketing", "seniority": "Senior", "gs": "Specialist", "ai": false, "min_exp": 3, "degree": false, "budget": false, "sal_low": null, "sal_high": null, "sal_mid": null, "sal_rng": null, "job_type": "remote", "remote": true, "source": "Unicorns.lt", "location": "Warsaw / Barcelona / Lisbon / Prague / Zagreb", "skills": ["SEO", "Content Marketing"], "b_health": false, "b_flex": true, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": true, "b_vac": false, "y_req": -0.66, "x_sal": null}, {"cat": "Content & Creative", "sub": "Content Marketing", "seniority": "Senior", "gs": "Specialist", "ai": false, "min_exp": 3, "degree": false, "budget": false, "sal_low": 3200.0, "sal_high": null, "sal_mid": 3200, "sal_rng": null, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius / Kaunas", "skills": ["SEO", "Content Marketing"], "b_health": true, "b_flex": true, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": true, "b_vac": false, "y_req": -0.66, "x_sal": 0.75}, {"cat": "Content & Creative", "sub": "Content Marketing", "seniority": "Senior", "gs": "Specialist", "ai": true, "min_exp": 3, "degree": false, "budget": false, "sal_low": 2000.0, "sal_high": null, "sal_mid": 2000, "sal_rng": null, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius / Kaunas", "skills": ["SEO", "Content Marketing", "SaaS"], "b_health": true, "b_flex": true, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": true, "b_vac": false, "y_req": 0.61, "x_sal": -0.92}, {"cat": "Content & Creative", "sub": "Creative / Design", "seniority": "Senior", "gs": "Specialist", "ai": true, "min_exp": null, "degree": false, "budget": false, "sal_low": 3100.0, "sal_high": 4100.0, "sal_mid": 3600, "sal_rng": 1000, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius / Kaunas", "skills": ["YouTube", "Figma", "Adobe Creative", "Copywriting"], "b_health": true, "b_flex": true, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": true, "b_vac": false, "y_req": 0.83, "x_sal": 1.31}, {"cat": "Content & Creative", "sub": "Creative / Design", "seniority": "Senior", "gs": "Specialist", "ai": true, "min_exp": null, "degree": false, "budget": false, "sal_low": null, "sal_high": null, "sal_mid": null, "sal_rng": null, "job_type": "remote", "remote": true, "source": "Unicorns.lt", "location": "Barcelona / Alicante / Andalusia / Madrid / Malaga / Seville / Valencia", "skills": ["YouTube", "Figma", "Adobe Creative", "Copywriting"], "b_health": false, "b_flex": true, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": true, "b_vac": false, "y_req": 0.83, "x_sal": null}, {"cat": "Digital Marketing", "sub": "PPC / Google Ads", "seniority": "Senior", "gs": "Specialist", "ai": true, "min_exp": null, "degree": false, "budget": false, "sal_low": null, "sal_high": null, "sal_mid": null, "sal_rng": null, "job_type": "remote", "remote": true, "source": "Unicorns.lt", "location": "Vienna / Riga / Hamburg / Prague / München / Krakow / Bialystok / London / Stockholm / Copenhagen / Bulgaria", "skills": ["Google Ads", "Meta Ads", "PPC", "Google Analytics", "Looker", "Data Studio", "YouTube"], "b_health": false, "b_flex": true, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": true, "b_vac": false, "y_req": 1.49, "x_sal": null}, {"cat": "Product Marketing", "sub": "Product Marketing", "seniority": "Senior", "gs": "Specialist", "ai": false, "min_exp": 3, "degree": false, "budget": false, "sal_low": 3000.0, "sal_high": null, "sal_mid": 3000, "sal_rng": null, "job_type": "remote", "remote": true, "source": "Unicorns.lt", "location": "Warsaw / Vilnius / Riga / Barcelona / Lisbon / Tallinn", "skills": [], "b_health": false, "b_flex": true, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": true, "b_vac": false, "y_req": -1.1, "x_sal": -1.52}, {"cat": "Social Media", "sub": "Social Media Management", "seniority": "Senior", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 4200.0, "sal_high": null, "sal_mid": 4200, "sal_rng": null, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius / Kaunas", "skills": ["Meta Ads", "PPC", "Paid Social", "Performance Marketing", "Market Research"], "b_health": true, "b_flex": true, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": true, "b_vac": false, "y_req": -0.0, "x_sal": 1.22}, {"cat": "Content & Creative", "sub": "Copywriting", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": 3, "degree": false, "budget": false, "sal_low": 2900.0, "sal_high": null, "sal_mid": 2900, "sal_rng": null, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius / Kaunas", "skills": ["SEO", "LinkedIn", "A/B Testing", "CRO", "Performance Marketing", "Copywriting", "SaaS"], "b_health": false, "b_flex": true, "b_learn": true, "b_equity": false, "b_bonus": true, "b_sports": true, "b_vac": false, "y_req": 0.44, "x_sal": 0.33}, {"cat": "Content & Creative", "sub": "Content Marketing", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": 3, "degree": false, "budget": false, "sal_low": null, "sal_high": null, "sal_mid": null, "sal_rng": null, "job_type": "remote", "remote": true, "source": "Unicorns.lt", "location": "Paris / Lyon / Marseille / Thiais", "skills": ["Instagram", "TikTok", "YouTube"], "b_health": false, "b_flex": true, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": true, "b_vac": false, "y_req": -0.44, "x_sal": null}, {"cat": "Content & Creative", "sub": "Content Marketing", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": 3, "degree": false, "budget": false, "sal_low": null, "sal_high": null, "sal_mid": null, "sal_rng": null, "job_type": "remote", "remote": true, "source": "Unicorns.lt", "location": "Barcelona / Madrid / Malaga / Valencia / Seville / Andalusia / Alicante", "skills": ["Instagram", "TikTok", "YouTube"], "b_health": false, "b_flex": true, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": true, "b_vac": false, "y_req": -0.44, "x_sal": null}, {"cat": "Digital Marketing", "sub": "PPC / Google Ads", "seniority": "Senior", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 2479.0, "sal_high": 4628.0, "sal_mid": 3554, "sal_rng": 2149, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius", "skills": ["Google Ads", "PPC", "Google Analytics", "Excel", "A/B Testing", "Performance Marketing"], "b_health": true, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": true, "y_req": 0.22, "x_sal": 0.01}, {"cat": "Digital Marketing", "sub": "PPC / Google Ads", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 2479.0, "sal_high": 4628.0, "sal_mid": 3554, "sal_rng": 2149, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Kaunas", "skills": ["Google Ads", "PPC", "Google Analytics", "Excel", "A/B Testing", "Performance Marketing"], "b_health": true, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": true, "y_req": 0.22, "x_sal": 0.01}, {"cat": "Digital Marketing", "sub": "PPC / Google Ads", "seniority": "Lead", "gs": "Specialist", "ai": false, "min_exp": 2, "degree": false, "budget": false, "sal_low": 4300.0, "sal_high": null, "sal_mid": 4300, "sal_rng": null, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Kaunas", "skills": ["Google Ads", "PPC", "Google Analytics", "Looker", "Data Studio"], "b_health": true, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": true, "y_req": -0.46, "x_sal": 0.53}, {"cat": "Brand & Communications", "sub": "PR / Communications", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 2500.0, "sal_high": 4000.0, "sal_mid": 3250, "sal_rng": 1500, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius", "skills": ["PR", "Fintech"], "b_health": true, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": true, "b_sports": false, "b_vac": true, "y_req": -0.66, "x_sal": 0.16}, {"cat": "Digital Marketing", "sub": "Growth / Performance Marketing", "seniority": "Lead", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 4300.0, "sal_high": null, "sal_mid": 4300, "sal_rng": null, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius", "skills": ["PPC", "Paid Social", "Performance Marketing"], "b_health": true, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": true, "y_req": -0.44, "x_sal": 0.53}, {"cat": "Affiliate & Partnerships", "sub": "Affiliate Marketing", "seniority": "Lead", "gs": "Specialist", "ai": false, "min_exp": 3, "degree": false, "budget": false, "sal_low": null, "sal_high": null, "sal_mid": null, "sal_rng": null, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius / Kaunas", "skills": ["PPC", "SEO", "CRO", "Content Marketing", "Affiliate Marketing", "B2B Marketing"], "b_health": true, "b_flex": true, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": true, "b_vac": true, "y_req": 0.22, "x_sal": null}, {"cat": "Marketing Management", "sub": "Marketing Management", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": 3, "degree": false, "budget": false, "sal_low": 2900.0, "sal_high": 3900.0, "sal_mid": 3400, "sal_rng": 1000, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius", "skills": ["UX", "Copywriting", "B2B Marketing"], "b_health": true, "b_flex": true, "b_learn": false, "b_equity": false, "b_bonus": true, "b_sports": true, "b_vac": true, "y_req": -0.44, "x_sal": 0.22}, {"cat": "Content & Creative", "sub": "Copywriting", "seniority": "Senior", "gs": "Specialist", "ai": false, "min_exp": 2, "degree": false, "budget": false, "sal_low": 2200.0, "sal_high": 3600.0, "sal_mid": 2900, "sal_rng": 1400, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius / Kaunas", "skills": ["SEO", "A/B Testing", "CRO", "Copywriting"], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -0.68, "x_sal": 0.33}, {"cat": "Content & Creative", "sub": "Copywriting", "seniority": "Junior", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": null, "sal_high": null, "sal_mid": null, "sal_rng": null, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Berlin", "skills": ["PPC", "SEO", "Copywriting", "PR"], "b_health": false, "b_flex": true, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -0.22, "x_sal": null}, {"cat": "Content & Creative", "sub": "Copywriting", "seniority": "Junior", "gs": "Specialist", "ai": false, "min_exp": 1, "degree": false, "budget": false, "sal_low": null, "sal_high": null, "sal_mid": null, "sal_rng": null, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius / Kaunas", "skills": ["SEO", "Copywriting"], "b_health": true, "b_flex": true, "b_learn": false, "b_equity": false, "b_bonus": true, "b_sports": true, "b_vac": true, "y_req": -1.58, "x_sal": null}, {"cat": "Content & Creative", "sub": "Copywriting", "seniority": "Senior", "gs": "Specialist", "ai": false, "min_exp": 2, "degree": false, "budget": false, "sal_low": null, "sal_high": null, "sal_mid": null, "sal_rng": null, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius / Kaunas", "skills": ["SEO", "Copywriting"], "b_health": true, "b_flex": true, "b_learn": false, "b_equity": false, "b_bonus": true, "b_sports": true, "b_vac": true, "y_req": -1.12, "x_sal": null}, {"cat": "Content & Creative", "sub": "Copywriting", "seniority": "Senior", "gs": "Specialist", "ai": false, "min_exp": 2, "degree": false, "budget": false, "sal_low": null, "sal_high": null, "sal_mid": null, "sal_rng": null, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Warsaw / Krakow", "skills": ["SEO", "Copywriting"], "b_health": true, "b_flex": true, "b_learn": false, "b_equity": false, "b_bonus": true, "b_sports": false, "b_vac": false, "y_req": -1.12, "x_sal": null}, {"cat": "Email & CRM", "sub": "Email Marketing", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": 3, "degree": true, "budget": false, "sal_low": null, "sal_high": null, "sal_mid": null, "sal_rng": null, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius", "skills": ["Email Marketing"], "b_health": true, "b_flex": true, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": true, "b_vac": true, "y_req": 1.75, "x_sal": null}, {"cat": "Brand & Communications", "sub": "Brand Marketing", "seniority": "Senior", "gs": "Specialist", "ai": false, "min_exp": 5, "degree": false, "budget": true, "sal_low": null, "sal_high": null, "sal_mid": null, "sal_rng": null, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius", "skills": ["Brand Management"], "b_health": true, "b_flex": true, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": true, "b_vac": true, "y_req": 1.62, "x_sal": null}, {"cat": "Digital Marketing", "sub": "Growth / Performance Marketing", "seniority": "Head / Director", "gs": "Specialist", "ai": false, "min_exp": 5, "degree": false, "budget": false, "sal_low": 5200.0, "sal_high": 7000.0, "sal_mid": 6100, "sal_rng": 1800, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius", "skills": ["Paid Social", "SEO", "HubSpot", "Salesforce", "UX", "Affiliate Marketing", "Performance Marketing", "Copywriting", "B2B Marketing", "SaaS"], "b_health": false, "b_flex": true, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": 2.01, "x_sal": 1.79}, {"cat": "Social Media", "sub": "Influencer Marketing", "seniority": "Senior", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": true, "sal_low": 2400.0, "sal_high": 4200.0, "sal_mid": 3300, "sal_rng": 1800, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius / Kaunas", "skills": ["Paid Social", "Instagram", "YouTube", "Influencer Marketing", "Market Research"], "b_health": true, "b_flex": true, "b_learn": false, "b_equity": false, "b_bonus": true, "b_sports": true, "b_vac": true, "y_req": 1.57, "x_sal": 0.51}, {"cat": "Content & Creative", "sub": "Creative / Design", "seniority": "Lead", "gs": "Specialist", "ai": true, "min_exp": 6, "degree": false, "budget": false, "sal_low": 3600.0, "sal_high": 4800.0, "sal_mid": 4200, "sal_rng": 1200, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius / Kaunas", "skills": ["Figma", "Adobe Creative", "UX", "Copywriting"], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": 2.21, "x_sal": 2.14}, {"cat": "Affiliate & Partnerships", "sub": "Affiliate Marketing", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": 1, "degree": false, "budget": false, "sal_low": null, "sal_high": null, "sal_mid": null, "sal_rng": null, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius / Kaunas", "skills": ["PPC", "SEO", "CRM", "CRO", "Content Marketing", "Influencer Marketing", "B2B Marketing"], "b_health": true, "b_flex": true, "b_learn": false, "b_equity": false, "b_bonus": true, "b_sports": true, "b_vac": true, "y_req": -0.48, "x_sal": null}, {"cat": "SEO", "sub": "SEO Specialist / Manager", "seniority": "Junior", "gs": "Specialist", "ai": true, "min_exp": null, "degree": false, "budget": false, "sal_low": 2200.0, "sal_high": 3400.0, "sal_mid": 2800, "sal_rng": 1200, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius / Kaunas", "skills": ["SEO", "Technical SEO", "Google Analytics"], "b_health": true, "b_flex": true, "b_learn": false, "b_equity": false, "b_bonus": true, "b_sports": true, "b_vac": true, "y_req": 0.61, "x_sal": -0.57}, {"cat": "SEO", "sub": "SEO Specialist / Manager", "seniority": "Senior", "gs": "Specialist", "ai": true, "min_exp": null, "degree": false, "budget": false, "sal_low": 2700.0, "sal_high": 4000.0, "sal_mid": 3350, "sal_rng": 1300, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius / Kaunas", "skills": ["SEO", "Technical SEO", "Google Analytics"], "b_health": true, "b_flex": true, "b_learn": false, "b_equity": false, "b_bonus": true, "b_sports": true, "b_vac": true, "y_req": 0.61, "x_sal": 0.02}, {"cat": "Brand & Communications", "sub": "PR / Communications", "seniority": "Senior", "gs": "Specialist", "ai": false, "min_exp": 3, "degree": false, "budget": false, "sal_low": 2500.0, "sal_high": 4200.0, "sal_mid": 3350, "sal_rng": 1700, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius / Kaunas", "skills": ["Copywriting", "PR"], "b_health": true, "b_flex": true, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": true, "b_vac": true, "y_req": -0.66, "x_sal": 0.28}, {"cat": "Digital Marketing", "sub": "PPC / Google Ads", "seniority": "Senior", "gs": "Specialist", "ai": false, "min_exp": 3, "degree": false, "budget": false, "sal_low": null, "sal_high": null, "sal_mid": null, "sal_rng": null, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Warsaw", "skills": ["Google Ads", "PPC", "Google Analytics", "Looker"], "b_health": true, "b_flex": true, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -0.22, "x_sal": null}, {"cat": "Analytics & Data", "sub": "Marketing Analytics", "seniority": "Junior", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 2200.0, "sal_high": 4500.0, "sal_mid": 3350, "sal_rng": 2300, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius", "skills": ["Google Ads", "Google Analytics", "GTM"], "b_health": true, "b_flex": true, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": true, "b_vac": true, "y_req": -0.44, "x_sal": -0.89}, {"cat": "Content & Creative", "sub": "Content Marketing", "seniority": "Senior", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 2300.0, "sal_high": 3500.0, "sal_mid": 2900, "sal_rng": 1200, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius / Kaunas", "skills": ["SEO", "CRO"], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -0.66, "x_sal": 0.33}, {"cat": "Marketing", "sub": "Marketing Generalist", "seniority": "Senior", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": null, "sal_high": null, "sal_mid": null, "sal_rng": null, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Warsaw / Krakow / Wroclaw", "skills": ["Figma", "UX", "Copywriting"], "b_health": true, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": true, "y_req": -0.44, "x_sal": null}, {"cat": "SEO", "sub": "SEO Specialist / Manager", "seniority": "Head / Director", "gs": "Specialist", "ai": false, "min_exp": 4, "degree": false, "budget": false, "sal_low": 4100.0, "sal_high": null, "sal_mid": 4100, "sal_rng": null, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius, Lithuania", "skills": ["SEO", "E-commerce"], "b_health": true, "b_flex": true, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -0.2, "x_sal": 0.81}, {"cat": "Content & Creative", "sub": "Copywriting", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": 2, "degree": false, "budget": false, "sal_low": 2600.0, "sal_high": null, "sal_mid": 2600, "sal_rng": null, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius, Lithuania / Kaunas, Lithuania", "skills": ["SEO", "Copywriting", "PR", "E-commerce"], "b_health": true, "b_flex": true, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -0.68, "x_sal": -0.08}, {"cat": "Marketing", "sub": "Marketing Generalist", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": null, "sal_high": null, "sal_mid": null, "sal_rng": null, "job_type": "full-time", "remote": true, "source": "Unicorns.lt", "location": "Apply for this job", "skills": ["Looker", "Tableau", "CRO", "UX", "E-commerce"], "b_health": true, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -0.0, "x_sal": null}, {"cat": "Content & Creative", "sub": "Copywriting", "seniority": "Mid", "gs": "Specialist", "ai": true, "min_exp": 2, "degree": false, "budget": false, "sal_low": 2200.0, "sal_high": 3200.0, "sal_mid": 2700, "sal_rng": 1000, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius", "skills": ["PPC", "SEO", "Copywriting"], "b_health": false, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": 0.15, "x_sal": 0.06}, {"cat": "Digital Marketing", "sub": "Digital Marketing Specialist", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": 4, "degree": false, "budget": false, "sal_low": null, "sal_high": null, "sal_mid": null, "sal_rng": null, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius", "skills": ["PPC", "SEO", "HubSpot", "B2B Marketing", "SaaS"], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": 0.46, "x_sal": null}, {"cat": "Digital Marketing", "sub": "PPC / Google Ads", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": 1, "degree": false, "budget": false, "sal_low": 3400.0, "sal_high": 4700.0, "sal_mid": 4050, "sal_rng": 1300, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius", "skills": ["Google Ads", "PPC", "SEO", "Google Analytics", "GTM", "LinkedIn", "CRO", "B2B Marketing"], "b_health": false, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -0.27, "x_sal": 0.36}, {"cat": "Product Marketing", "sub": "Product Marketing", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 3100.0, "sal_high": 4000.0, "sal_mid": 3550, "sal_rng": 900, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius", "skills": ["SEO", "Google Analytics", "GTM", "Power BI", "Salesforce", "UX", "SaaS"], "b_health": false, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": 0.44, "x_sal": -0.25}, {"cat": "SEO", "sub": "SEO Specialist / Manager", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 2200.0, "sal_high": 3700.0, "sal_mid": 2950, "sal_rng": 1500, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius / Warsaw / Kaunas", "skills": ["ASO", "Looker", "A/B Testing", "UX", "SaaS", "Mobile Marketing"], "b_health": false, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": true, "b_sports": false, "b_vac": false, "y_req": 0.22, "x_sal": -0.41}, {"cat": "Analytics & Data", "sub": "Marketing Analytics", "seniority": "Senior", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": true, "sal_low": 3200.0, "sal_high": 5900.0, "sal_mid": 4550, "sal_rng": 2700, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius / Warsaw / Kaunas", "skills": ["Looker", "Tableau", "Power BI", "SQL", "SaaS"], "b_health": true, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": true, "y_req": 1.57, "x_sal": 0.19}, {"cat": "Digital Marketing", "sub": "PPC / Google Ads", "seniority": "Senior", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 2600.0, "sal_high": 4500.0, "sal_mid": 3550, "sal_rng": 1900, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius / Warsaw / Kaunas", "skills": ["PPC", "SEO", "Google Analytics", "Looker", "Tableau", "Excel", "A/B Testing", "CRO"], "b_health": false, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": 0.65, "x_sal": 0.01}, {"cat": "Content & Creative", "sub": "Creative / Design", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 2150.0, "sal_high": 3400.0, "sal_mid": 2775, "sal_rng": 1250, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius / Kaunas", "skills": ["Performance Marketing", "Copywriting"], "b_health": true, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": true, "y_req": -0.66, "x_sal": 0.16}, {"cat": "Affiliate & Partnerships", "sub": "Affiliate Marketing", "seniority": "Senior", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 3600.0, "sal_high": 4300.0, "sal_mid": 3950, "sal_rng": 700, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius / Kaunas / Warsaw", "skills": ["SEO", "Google Analytics", "Salesforce", "CRO", "Content Marketing", "Affiliate Marketing"], "b_health": true, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": true, "b_sports": false, "b_vac": true, "y_req": 0.22, "x_sal": -0.71}, {"cat": "Email & CRM", "sub": "Email Marketing", "seniority": "Senior", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 2700.0, "sal_high": 4700.0, "sal_mid": 3700, "sal_rng": 2000, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius / Kaunas / Warsaw", "skills": ["CRM", "Klaviyo", "Braze", "Iterable", "Lifecycle Marketing"], "b_health": false, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -0.0, "x_sal": 0.45}, {"cat": "Digital Marketing", "sub": "Growth / Performance Marketing", "seniority": "Senior", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": null, "sal_high": null, "sal_mid": null, "sal_rng": null, "job_type": "part-time", "remote": false, "source": "Unicorns.lt", "location": "Berlin", "skills": ["ASO", "CRM", "TikTok", "A/B Testing", "SaaS"], "b_health": false, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": true, "b_sports": true, "b_vac": false, "y_req": -0.0, "x_sal": null}, {"cat": "Digital Marketing", "sub": "Growth / Performance Marketing", "seniority": "Senior", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": true, "sal_low": 2600.0, "sal_high": 4700.0, "sal_mid": 3650, "sal_rng": 2100, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius / Kaunas / Warsaw", "skills": ["Google Ads", "Meta Ads", "TikTok", "YouTube", "A/B Testing", "Performance Marketing", "SaaS"], "b_health": false, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": true, "b_sports": false, "b_vac": false, "y_req": 2.01, "x_sal": 0.08}, {"cat": "Content & Creative", "sub": "Content Marketing", "seniority": "Lead", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 3000.0, "sal_high": 4100.0, "sal_mid": 3550, "sal_rng": 1100, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Vilnius / Kaunas", "skills": ["SEO", "WordPress", "UX"], "b_health": true, "b_flex": false, "b_learn": true, "b_equity": false, "b_bonus": false, "b_sports": false, "b_vac": true, "y_req": -0.44, "x_sal": 1.24}, {"cat": "Analytics & Data", "sub": "Marketing Analytics", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": 3433.0, "sal_high": 4650.0, "sal_mid": 4042, "sal_rng": 1217, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "Kaunas Vilnius", "skills": ["Looker", "SQL", "Python", "LinkedIn"], "b_health": true, "b_flex": false, "b_learn": true, "b_equity": true, "b_bonus": true, "b_sports": false, "b_vac": false, "y_req": -0.22, "x_sal": -0.27}, {"cat": "Digital Marketing", "sub": "Digital Marketing Specialist", "seniority": "Mid", "gs": "Generalist", "ai": false, "min_exp": 1, "degree": false, "budget": false, "sal_low": 2300.0, "sal_high": 3117.0, "sal_mid": 2708, "sal_rng": 817, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "", "skills": ["Google Ads", "Programmatic", "Excel", "LinkedIn", "Instagram", "TikTok", "YouTube", "Performance Marketing"], "b_health": true, "b_flex": false, "b_learn": true, "b_equity": true, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -0.27, "x_sal": -0.58}, {"cat": "Digital Marketing", "sub": "Growth / Performance Marketing", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": 2, "degree": false, "budget": false, "sal_low": 2483.0, "sal_high": 3358.0, "sal_mid": 2920, "sal_rng": 875, "job_type": "hybrid", "remote": false, "source": "Unicorns.lt", "location": "", "skills": ["Google Ads", "Meta Ads", "TikTok Ads", "Paid Social", "ASO", "Excel", "LinkedIn", "TikTok", "Performance Marketing"], "b_health": true, "b_flex": false, "b_learn": true, "b_equity": true, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": 0.41, "x_sal": -0.43}, {"cat": "Analytics & Data", "sub": "Marketing Analytics", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": 2, "degree": false, "budget": false, "sal_low": 2483.0, "sal_high": 3358.0, "sal_mid": 2920, "sal_rng": 875, "job_type": "contract", "remote": false, "source": "Unicorns.lt", "location": "", "skills": ["Paid Social", "ASO", "Looker", "Excel", "LinkedIn", "Performance Marketing"], "b_health": true, "b_flex": false, "b_learn": true, "b_equity": true, "b_bonus": false, "b_sports": false, "b_vac": false, "y_req": -0.24, "x_sal": -1.28}, {"cat": "SEO", "sub": "SEO Specialist / Manager", "seniority": "Mid", "gs": "Specialist", "ai": false, "min_exp": null, "degree": false, "budget": false, "sal_low": null, "sal_high": null, "sal_mid": null, "sal_rng": null, "job_type": "full-time", "remote": false, "source": "Unicorns.lt", "location": "", "skills": ["E-commerce"], "b_health": false, "b_flex": false, "b_learn": false, "b_equity": false, "b_bonus": true, "b_sports": false, "b_vac": false, "y_req": -0.88, "x_sal": null}];
+const TOP_COS = [["Hostinger", 27], ["Nordsec", 20], ["Surfshark", 9], ["Oxylabs", 5], ["Eneba", 5], ["Mediatech", 5], ["Vinted", 4], ["UAB „NFQ Technologies“", 3], ["UAB „People Link“", 3], ["AB „Volfas Engelman“", 2]];
+
+// ── utils ────────────────────────────────────────────────────────────────
+const $  = id => document.getElementById(id);
+const grays = n => Array.from({length:n},(_,i)=>`hsl(0,0%,${Math.round(10+(i/(Math.max(n-1,1)))*58)}%)`);
+const mono  = n => Array.from({length:n},(_,i)=>`hsl(0,0%,${Math.round(18+(i/(Math.max(n-1,1)))*55)}%)`);
+
+function countBy(arr,fn){const m={};arr.forEach(x=>{const k=fn(x);m[k]=(m[k]||0)+1;});return Object.entries(m).sort((a,b)=>b[1]-a[1]);}
+function median(arr){if(!arr.length)return null;const s=[...arr].sort((a,b)=>a-b),m=Math.floor(s.length/2);return s.length%2?s[m]:(s[m-1]+s[m])/2;}
+function pct(n,d){return d?Math.round(n/d*100):0;}
+
+const BASE={
+  responsive:true,maintainAspectRatio:false,
+  plugins:{legend:{display:false},tooltip:{backgroundColor:'#111',titleColor:'#fff',bodyColor:'#ccc',padding:9,cornerRadius:3}},
+  scales:{x:{grid:{color:'#f2f2f2'},ticks:{color:'#888',font:{size:10}}},y:{grid:{color:'#f2f2f2'},ticks:{color:'#888',font:{size:10}}}}
+};
+const HBAR={...BASE,indexAxis:'y',scales:{x:{grid:{color:'#f2f2f2'},ticks:{color:'#888',font:{size:10}},beginAtZero:true},y:{grid:{display:false},ticks:{color:'#555',font:{size:10}}}}};
+
+// Seniority config
+const SEN_ORDER=['Junior','Mid','Senior','Lead','Head / Director'];
+const SEN_COLS=['#DEEAF1','#9DC3E6','#4472C4','#2E5090','#1F3864'];
+const SEN_TEXT={'Junior':'#1F3864','Mid':'#1F3864','Senior':'#fff','Lead':'#fff','Head / Director':'#fff'};
+
+// ── tabs ─────────────────────────────────────────────────────────────────
+document.querySelectorAll('.tab-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+    btn.classList.add('active');
+    $('tab-'+btn.dataset.tab).classList.add('active');
+  });
+});
+
+// ── stat cards ────────────────────────────────────────────────────────────
+const salMids=DATA.filter(d=>d.sal_mid).map(d=>d.sal_mid);
+const med=median(salMids);
+if(med) $('s-med').textContent='€'+Math.round(med/50)*50+'/mo';
+$('s-sal-pct').textContent=pct(salMids.length,DATA.length)+'%';
+$('s-remote').textContent=pct(DATA.filter(d=>d.remote).length,DATA.length)+'%';
+
+// ── OVERVIEW ─────────────────────────────────────────────────────────────
+(()=>{
+  // Categories horizontal bar
+  const catCounts=countBy(DATA,d=>d.cat).filter(x=>x[0]);
+  new Chart($('cSub'),{type:'bar',data:{labels:catCounts.map(x=>x[0]),datasets:[{data:catCounts.map(x=>x[1]),backgroundColor:grays(catCounts.length),borderRadius:2}]},
+    options:{...HBAR,plugins:{...HBAR.plugins,tooltip:{...BASE.plugins.tooltip,callbacks:{label:c=>` ${c.raw} listings`}}}}});
+
+  // Top companies (pre-computed in Python, kept separate from anonymised DATA)
+  const co=TOP_COS;
+  new Chart($('cCo'),{type:'bar',data:{labels:co.map(x=>x[0]),datasets:[{data:co.map(x=>x[1]),backgroundColor:'#111',borderRadius:2}]},
+    options:{...HBAR,plugins:{...HBAR.plugins,tooltip:{...BASE.plugins.tooltip,callbacks:{label:c=>` ${c.raw} listings`}}}}});
+
+  // Source donut
+  const src=countBy(DATA,d=>d.source);
+  new Chart($('cSrc'),{type:'doughnut',data:{labels:src.map(x=>x[0]),datasets:[{data:src.map(x=>x[1]),backgroundColor:['#111','#777','#bbb'],borderWidth:0}]},
+    options:{responsive:true,maintainAspectRatio:false,cutout:'58%',plugins:{legend:{display:true,position:'right',labels:{boxWidth:9,font:{size:9},color:'#555',padding:6}},tooltip:BASE.plugins.tooltip}}});
+
+  // Job type donut
+  const tl={'full-time':'Full-time','hybrid':'Hybrid','remote':'Remote','part-time':'Part-time','internship':'Internship','contract':'Contract'};
+  const jt=countBy(DATA,d=>tl[d.job_type]||d.job_type||'Other');
+  new Chart($('cType'),{type:'doughnut',data:{labels:jt.map(x=>x[0]),datasets:[{data:jt.map(x=>x[1]),backgroundColor:mono(jt.length),borderWidth:0}]},
+    options:{responsive:true,maintainAspectRatio:false,cutout:'58%',plugins:{legend:{display:true,position:'right',labels:{boxWidth:9,font:{size:9},color:'#555',padding:6}},tooltip:BASE.plugins.tooltip}}});
+
+  // Generalist vs Specialist by category (stacked %)
+  const cats=[...new Set(DATA.map(d=>d.cat))].filter(Boolean);
+  const gsData=cats.map(c=>{
+    const n=DATA.filter(d=>d.cat===c).length;
+    const g=DATA.filter(d=>d.cat===c&&d.gs==='Generalist').length;
+    return{c,gp:pct(g,n),sp:pct(n-g,n),n};
+  }).sort((a,b)=>b.gp-a.gp);
+  new Chart($('cGS'),{type:'bar',
+    data:{labels:gsData.map(x=>x.c),datasets:[
+      {label:'Generalist',data:gsData.map(x=>x.gp),backgroundColor:'#DDEBF7',borderRadius:0,stack:'s'},
+      {label:'Specialist',data:gsData.map(x=>x.sp),backgroundColor:'#ccc',borderRadius:0,stack:'s'},
+    ]},
+    options:{...HBAR,
+      plugins:{...HBAR.plugins,legend:{display:true,position:'bottom',labels:{boxWidth:9,font:{size:9},padding:8}},
+        tooltip:{...BASE.plugins.tooltip,mode:'index',callbacks:{label:c=>` ${c.dataset.label}: ${c.raw}%`}}},
+      scales:{x:{stacked:true,max:100,grid:{color:'#f2f2f2'},ticks:{color:'#888',font:{size:10},callback:v=>v+'%'}},
+              y:{stacked:true,grid:{display:false},ticks:{color:'#555',font:{size:9}}}}}});
+
+  // AI % by category
+  const aiSubs=cats.map(c=>{
+    const n=DATA.filter(d=>d.cat===c).length;
+    const a=DATA.filter(d=>d.cat===c&&d.ai).length;
+    return[c,pct(a,n),n];
+  }).filter(x=>x[1]>0).sort((a,b)=>b[1]-a[1]);
+  new Chart($('cAICat'),{type:'bar',data:{labels:aiSubs.map(x=>x[0]),datasets:[{data:aiSubs.map(x=>x[1]),backgroundColor:'#F4B942',borderRadius:2}]},
+    options:{...HBAR,
+      plugins:{...HBAR.plugins,tooltip:{...BASE.plugins.tooltip,callbacks:{label:c=>` ${c.raw}% (n=${aiSubs[c.dataIndex][2]})`}}},
+      scales:{x:{grid:{color:'#f2f2f2'},ticks:{color:'#888',font:{size:10},callback:v=>v+'%'},beginAtZero:true,max:100},y:{grid:{display:false},ticks:{color:'#555',font:{size:9}}}}}});
+})();
+
+// ── ROLES & SENIORITY ────────────────────────────────────────────────────
+(()=>{
+  // Seniority bar
+  const scnts=SEN_ORDER.map(s=>DATA.filter(d=>d.seniority===s).length);
+  new Chart($('cSen'),{type:'bar',data:{labels:SEN_ORDER,datasets:[{data:scnts,backgroundColor:SEN_COLS,borderRadius:3}]},
+    options:{...BASE,scales:{x:{grid:{display:false},ticks:{color:'#888',font:{size:10}}},y:{grid:{color:'#f2f2f2'},ticks:{color:'#888',font:{size:10}},beginAtZero:true}}}});
+
+  // Gen/Spec donut
+  const gn=DATA.filter(d=>d.gs==='Generalist').length;
+  new Chart($('cGSDist'),{type:'doughnut',data:{labels:['Generalist','Specialist'],datasets:[{data:[gn,DATA.length-gn],backgroundColor:['#DDEBF7','#ccc'],borderWidth:0}]},
+    options:{responsive:true,maintainAspectRatio:false,cutout:'62%',
+      plugins:{legend:{display:true,position:'bottom',labels:{boxWidth:10,font:{size:10},padding:10}},tooltip:BASE.plugins.tooltip}}});
+
+  // Min exp histogram
+  const expMap={};DATA.filter(d=>d.min_exp).forEach(d=>{expMap[d.min_exp]=(expMap[d.min_exp]||0)+1;});
+  const expKeys=Object.keys(expMap).sort((a,b)=>+a-+b);
+  new Chart($('cExp'),{type:'bar',data:{labels:expKeys.map(k=>k+'yr'),datasets:[{data:expKeys.map(k=>expMap[k]),backgroundColor:'#111',borderRadius:3}]},
+    options:{...BASE,scales:{x:{grid:{display:false},ticks:{color:'#888',font:{size:11}}},y:{grid:{color:'#f2f2f2'},ticks:{color:'#888',font:{size:10}},beginAtZero:true}}}});
+
+  // Seniority by category stacked
+  const cats=[...new Set(DATA.map(d=>d.cat))].filter(Boolean);
+  new Chart($('cSenCat'),{type:'bar',
+    data:{labels:cats,datasets:SEN_ORDER.map((s,i)=>({
+      label:s,data:cats.map(c=>DATA.filter(d=>d.cat===c&&d.seniority===s).length),
+      backgroundColor:SEN_COLS[i],borderRadius:1,stack:'s',
+    }))},
+    options:{...HBAR,
+      plugins:{...HBAR.plugins,legend:{display:true,position:'bottom',labels:{boxWidth:9,font:{size:9},padding:6}}},
+      scales:{x:{stacked:true,grid:{color:'#f2f2f2'},ticks:{color:'#888',font:{size:10}},beginAtZero:true},
+              y:{stacked:true,grid:{display:false},ticks:{color:'#555',font:{size:9}}}}}});
+
+  // Salary by seniority
+  const salSen=SEN_ORDER.map(s=>{
+    const ms=DATA.filter(d=>d.seniority===s&&d.sal_mid).map(d=>d.sal_mid);
+    return[s,ms.length?Math.round(median(ms)):null,ms.length];
+  }).filter(x=>x[1]);
+  new Chart($('cSalSen'),{type:'bar',data:{labels:salSen.map(x=>x[0]),datasets:[{data:salSen.map(x=>x[1]),backgroundColor:SEN_COLS.slice(0,salSen.length),borderRadius:3}]},
+    options:{...BASE,
+      plugins:{...BASE.plugins,tooltip:{...BASE.plugins.tooltip,callbacks:{label:c=>` €${c.raw.toLocaleString()}/mo (n=${salSen[c.dataIndex][2]})`}}},
+      scales:{x:{grid:{display:false},ticks:{color:'#888',font:{size:10}}},y:{grid:{color:'#f2f2f2'},ticks:{color:'#888',font:{size:10},callback:v=>'€'+Math.round(v/1000)+'k'},beginAtZero:true}}}});
+})();
+
+// ── SALARY ───────────────────────────────────────────────────────────────
+(()=>{
+  // Distribution
+  const buckets=[500,1000,1500,2000,2500,3000,3500,4000,4500,5000,6000,8000];
+  const blbls=[],bcnts=Array(buckets.length-1).fill(0);
+  for(let i=0;i<buckets.length-1;i++){
+    blbls.push(`€${buckets[i]/1000}k–${buckets[i+1]/1000}k`);
+    salMids.forEach(v=>{if(v>=buckets[i]&&v<buckets[i+1])bcnts[i]++;});
+  }
+  new Chart($('cSalDist'),{type:'bar',data:{labels:blbls,datasets:[{data:bcnts,backgroundColor:'#111',borderRadius:3}]},
+    options:{...BASE,scales:{x:{grid:{display:false},ticks:{color:'#888',font:{size:9}}},y:{grid:{color:'#f2f2f2'},ticks:{color:'#888',font:{size:10}},beginAtZero:true}}}});
+
+  // By work arrangement
+  const types=[['full-time','Full-time'],['hybrid','Hybrid'],['remote','Remote'],['part-time','Part-time']];
+  const avgs=types.map(([t,l])=>{const ms=DATA.filter(d=>d.job_type===t&&d.sal_mid).map(d=>d.sal_mid);return[l,ms.length?Math.round(median(ms)):null,ms.length];}).filter(x=>x[1]);
+  new Chart($('cSalType'),{type:'bar',data:{labels:avgs.map(x=>x[0]),datasets:[{data:avgs.map(x=>x[1]),backgroundColor:'#111',borderRadius:3}]},
+    options:{...BASE,
+      plugins:{...BASE.plugins,tooltip:{...BASE.plugins.tooltip,callbacks:{label:c=>` €${c.raw.toLocaleString()}/mo (n=${avgs[c.dataIndex][2]})`}}},
+      scales:{x:{grid:{display:false},ticks:{color:'#888',font:{size:11}}},y:{grid:{color:'#f2f2f2'},ticks:{color:'#888',font:{size:10},callback:v=>'€'+Math.round(v/1000)+'k'},beginAtZero:true}}}});
+
+  // Median by category (custom bars)
+  const cats=[...new Set(DATA.map(d=>d.cat))].filter(Boolean);
+  const salRows=cats.map(c=>{
+    const ms=DATA.filter(d=>d.cat===c&&d.sal_mid).map(d=>d.sal_mid);
+    return{c,med:ms.length?Math.round(median(ms)):null,n:ms.length};
+  }).filter(x=>x.med).sort((a,b)=>b.med-a.med);
+  const mx=Math.max(...salRows.map(x=>x.med));
+  salRows.forEach(r=>{
+    const row=document.createElement('div');row.className='hb-row';
+    row.innerHTML=`<span class="hb-lbl" title="${r.c}">${r.c}</span>
+      <div class="hb-track"><div class="hb-fill" style="width:${Math.round(r.med/mx*100)}%"></div></div>
+      <span class="hb-val">€${r.med.toLocaleString()} <span style="opacity:.4;font-size:9px">(${r.n})</span></span>`;
+    $('salByCat').appendChild(row);
+  });
+
+  // Avg salary range by category
+  const rngRows=cats.map(c=>{
+    const rs=DATA.filter(d=>d.cat===c&&d.sal_rng!=null).map(d=>d.sal_rng);
+    return[c,rs.length?Math.round(rs.reduce((a,b)=>a+b,0)/rs.length):null,rs.length];
+  }).filter(x=>x[1]).sort((a,b)=>b[1]-a[1]);
+  new Chart($('cSalRng'),{type:'bar',data:{labels:rngRows.map(x=>x[0]),datasets:[{data:rngRows.map(x=>x[1]),backgroundColor:grays(rngRows.length),borderRadius:2}]},
+    options:{...HBAR,
+      plugins:{...HBAR.plugins,tooltip:{...BASE.plugins.tooltip,callbacks:{label:c=>` avg. €${c.raw.toLocaleString()} range (n=${rngRows[c.dataIndex][2]})`}}},
+      scales:{x:{grid:{color:'#f2f2f2'},ticks:{color:'#888',font:{size:10},callback:v=>{const k=v/1000;return'€'+(Number.isInteger(k)?k:k.toFixed(1))+'k';}},beginAtZero:true},y:{grid:{display:false},ticks:{color:'#555',font:{size:9}}}}}});
+})();
+
+// ── REQUIREMENTS ─────────────────────────────────────────────────────────
+(()=>{
+  const n=DATA.length;
+  const flags=[
+    ['AI skills required',   DATA.filter(d=>d.ai).length,    '#F4B942'],
+    ['Degree required',      DATA.filter(d=>d.degree).length, '#111'],
+    ['Budget ownership',     DATA.filter(d=>d.budget).length, '#555'],
+    ['Remote-friendly',      DATA.filter(d=>d.remote).length, '#888'],
+  ];
+  flags.forEach(([label,cnt,col])=>{
+    const p=pct(cnt,n);
+    const div=document.createElement('div');
+    div.innerHTML=`<div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:4px">
+      <span>${label}</span><span style="font-weight:700">${cnt} <span style="font-weight:400;color:#888">(${p}%)</span></span></div>
+      <div style="height:5px;background:#f0f0f0;border-radius:3px"><div style="height:100%;width:${p}%;background:${col};border-radius:3px"></div></div>`;
+    $('reqFlags').appendChild(div);
+  });
+
+  // AI by seniority %
+  const aiSen=SEN_ORDER.map(s=>{
+    const ns=DATA.filter(d=>d.seniority===s).length;
+    const a=DATA.filter(d=>d.seniority===s&&d.ai).length;
+    return[s,ns?pct(a,ns):0,ns];
+  });
+  new Chart($('cAISen'),{type:'bar',data:{labels:aiSen.map(x=>x[0]),datasets:[{data:aiSen.map(x=>x[1]),backgroundColor:'#F4B942',borderRadius:3}]},
+    options:{...BASE,
+      plugins:{...BASE.plugins,tooltip:{...BASE.plugins.tooltip,callbacks:{label:c=>` ${c.raw}% (n=${aiSen[c.dataIndex][2]})`}}},
+      scales:{x:{grid:{display:false},ticks:{color:'#888',font:{size:10}}},y:{grid:{color:'#f2f2f2'},ticks:{color:'#888',font:{size:10},callback:v=>v+'%'},beginAtZero:true,max:100}}}});
+
+  // AI by G/S
+  const gs=['Generalist','Specialist'];
+  const aiGS=gs.map(g=>{
+    const ng=DATA.filter(d=>d.gs===g).length;
+    const a=DATA.filter(d=>d.gs===g&&d.ai).length;
+    return[g,ng?pct(a,ng):0,ng];
+  });
+  new Chart($('cAIGS'),{type:'bar',data:{labels:aiGS.map(x=>x[0]),datasets:[{data:aiGS.map(x=>x[1]),backgroundColor:['#DDEBF7','#ccc'],borderRadius:3,borderWidth:1,borderColor:['#BDD7EE','#bbb']}]},
+    options:{...BASE,
+      plugins:{...BASE.plugins,tooltip:{...BASE.plugins.tooltip,callbacks:{label:c=>` ${c.raw}% (n=${aiGS[c.dataIndex][2]})`}}},
+      scales:{x:{grid:{display:false},ticks:{color:'#888',font:{size:11}}},y:{grid:{color:'#f2f2f2'},ticks:{color:'#888',font:{size:10},callback:v=>v+'%'},beginAtZero:true,max:100}}}});
+
+  // Median min exp by category
+  const cats=[...new Set(DATA.map(d=>d.cat))].filter(Boolean);
+  const expCat=cats.map(c=>{
+    const es=DATA.filter(d=>d.cat===c&&d.min_exp).map(d=>d.min_exp);
+    return[c,es.length?Math.round(median(es)*10)/10:null,es.length];
+  }).filter(x=>x[1]).sort((a,b)=>b[1]-a[1]);
+  new Chart($('cExpCat'),{type:'bar',data:{labels:expCat.map(x=>x[0]),datasets:[{data:expCat.map(x=>x[1]),backgroundColor:grays(expCat.length),borderRadius:2}]},
+    options:{...HBAR,
+      plugins:{...HBAR.plugins,tooltip:{...BASE.plugins.tooltip,callbacks:{label:c=>` ${c.raw} yrs median (n=${expCat[c.dataIndex][2]})`}}},
+      scales:{x:{grid:{color:'#f2f2f2'},ticks:{color:'#888',font:{size:10}},beginAtZero:true},y:{grid:{display:false},ticks:{color:'#555',font:{size:9}}}}}});
+
+  // Budget ownership by category %
+  const budCat=cats.map(c=>{
+    const nc=DATA.filter(d=>d.cat===c).length;
+    const b=DATA.filter(d=>d.cat===c&&d.budget).length;
+    return[c,nc?pct(b,nc):0,b,nc];
+  }).filter(x=>x[1]>0).sort((a,b)=>b[1]-a[1]);
+  new Chart($('cBudCat'),{type:'bar',data:{labels:budCat.map(x=>x[0]),datasets:[{data:budCat.map(x=>x[1]),backgroundColor:'#555',borderRadius:2}]},
+    options:{...HBAR,
+      plugins:{...HBAR.plugins,tooltip:{...BASE.plugins.tooltip,callbacks:{label:c=>` ${c.raw}% (${budCat[c.dataIndex][2]}/${budCat[c.dataIndex][3]})`}}},
+      scales:{x:{grid:{color:'#f2f2f2'},ticks:{color:'#888',font:{size:10},callback:v=>v+'%'},beginAtZero:true},y:{grid:{display:false},ticks:{color:'#555',font:{size:9}}}}}});
+})();
+
+// ── BENEFITS ─────────────────────────────────────────────────────────────
+(()=>{
+  const BENS=[
+    ['b_learn','L&D / Training'],['b_health','Health insurance'],['b_flex','Flexible hours'],
+    ['b_bonus','Bonus / commission'],['b_sports','Sports / wellness'],
+    ['b_vac','Extra vacation'],['b_equity','Equity / ESOP'],
+  ];
+  const n=DATA.length;
+
+  // Prevalence bars
+  BENS.forEach(([k,label])=>{
+    const cnt=DATA.filter(d=>d[k]).length,p=pct(cnt,n);
+    const row=document.createElement('div');row.className='hb-row';
+    row.innerHTML=`<span class="hb-lbl">${label}</span>
+      <div class="hb-track"><div class="hb-fill" style="width:${p}%"></div></div>
+      <span class="hb-val">${p}% <span style="opacity:.4;font-size:9px">(${cnt})</span></span>`;
+    $('benRows').appendChild(row);
+  });
+
+  // By source
+  const SRCS=['CV Bankas','CV Market','Unicorns.lt'];
+  new Chart($('cBenSrc'),{type:'bar',
+    data:{labels:SRCS,datasets:BENS.map(([k,label],i)=>({
+      label,
+      data:SRCS.map(src=>{const s=DATA.filter(d=>d.source===src);return s.length?pct(s.filter(d=>d[k]).length,s.length):0;}),
+      backgroundColor:grays(BENS.length)[i],borderRadius:2,
+    }))},
+    options:{...BASE,
+      plugins:{...BASE.plugins,legend:{display:true,position:'bottom',labels:{boxWidth:9,font:{size:9},padding:6}},
+        tooltip:{...BASE.plugins.tooltip,callbacks:{label:c=>` ${c.dataset.label}: ${c.raw}%`}}},
+      scales:{x:{grid:{display:false},ticks:{color:'#888',font:{size:11}}},
+              y:{grid:{color:'#f2f2f2'},ticks:{color:'#888',font:{size:10},callback:v=>v+'%'},beginAtZero:true,max:100}}}});
+
+  // Count histogram
+  const BKEYS=BENS.map(x=>x[0]);
+  const bcnts={};DATA.forEach(d=>{const c=BKEYS.filter(k=>d[k]).length;bcnts[c]=(bcnts[c]||0)+1;});
+  const bLabels=Object.keys(bcnts).sort((a,b)=>+a-+b);
+  new Chart($('cBenCount'),{type:'bar',data:{labels:bLabels.map(x=>x+' benefit'+(x==='1'?'':'s')),datasets:[{data:bLabels.map(x=>bcnts[x]),backgroundColor:'#111',borderRadius:3}]},
+    options:{...BASE,scales:{x:{grid:{display:false},ticks:{color:'#888',font:{size:10}}},y:{grid:{color:'#f2f2f2'},ticks:{color:'#888',font:{size:10}},beginAtZero:true}}}});
+
+  // Benefits G vs S
+  const gsLabels=['Generalist','Specialist'];
+  new Chart($('cBenGS'),{type:'bar',
+    data:{labels:gsLabels,datasets:BENS.map(([k,label],i)=>({
+      label,
+      data:gsLabels.map(g=>{const s=DATA.filter(d=>d.gs===g);return s.length?pct(s.filter(d=>d[k]).length,s.length):0;}),
+      backgroundColor:grays(BENS.length)[i],borderRadius:2,
+    }))},
+    options:{...BASE,
+      plugins:{...BASE.plugins,legend:{display:true,position:'bottom',labels:{boxWidth:9,font:{size:9},padding:6}},
+        tooltip:{...BASE.plugins.tooltip,callbacks:{label:c=>` ${c.dataset.label}: ${c.raw}%`}}},
+      scales:{x:{grid:{display:false},ticks:{color:'#888',font:{size:11}}},
+              y:{grid:{color:'#f2f2f2'},ticks:{color:'#888',font:{size:10},callback:v=>v+'%'},beginAtZero:true,max:100}}}});
+})();
+
+// ── SKILLS ───────────────────────────────────────────────────────────────
+(()=>{
+  const sm={};DATA.forEach(d=>(d.skills||[]).forEach(s=>{sm[s]=(sm[s]||0)+1;}));
+  const sorted=Object.entries(sm).sort((a,b)=>b[1]-a[1]);
+  const top25=sorted.slice(0,25);
+  let activeSkill=null;
+
+  top25.forEach(([sk,n])=>{
+    const tag=document.createElement('div');tag.className='stag';
+    tag.innerHTML=`${sk} <span class="n">${n}</span>`;
+    tag.onclick=()=>{
+      if(activeSkill===sk){activeSkill=null;tag.classList.remove('on');$('srch').value='';renderTable();}
+      else{
+        document.querySelectorAll('.stag').forEach(t=>t.classList.remove('on'));
+        activeSkill=sk;tag.classList.add('on');
+        document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+        document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+        document.querySelector('[data-tab="listings"]').classList.add('active');
+        $('tab-listings').classList.add('active');
+        $('srch').value=sk;renderTable();
+      }
+    };
+    $('skillCloud').appendChild(tag);
+  });
+
+  const top20=sorted.slice(0,20);
+  new Chart($('cSkills'),{type:'bar',data:{labels:top20.map(x=>x[0]),datasets:[{data:top20.map(x=>x[1]),backgroundColor:grays(top20.length),borderRadius:2}]},
+    options:{...HBAR,scales:{x:{grid:{color:'#f2f2f2'},ticks:{color:'#888',font:{size:10}},beginAtZero:true},y:{grid:{display:false},ticks:{color:'#555',font:{size:10},autoSkip:false}}}}});
+
+  // AI tools mentioned in job ads (extracted from ad content)
+  const aiToolData=[
+    ['ChatGPT',13],['Gemini',4],['Grok',3],['Midjourney',3],['Make / n8n',3],
+    ['Runway',1],['ElevenLabs',1],
+  ];
+  new Chart($('cAITools'),{type:'bar',
+    data:{labels:aiToolData.map(x=>x[0]),datasets:[{data:aiToolData.map(x=>x[1]),backgroundColor:['#111','#333','#555','#777','#888','#aaa','#ccc'],borderRadius:3}]},
+    options:{...BASE,
+      plugins:{...BASE.plugins,tooltip:{...BASE.plugins.tooltip,callbacks:{label:c=>` ${c.raw} listing${c.raw!==1?'s':''}`}}},
+      scales:{
+        x:{grid:{display:false},ticks:{color:'#555',font:{size:11},autoSkip:false}},
+        y:{grid:{color:'#f2f2f2'},ticks:{color:'#888',font:{size:10},stepSize:1},beginAtZero:true}
+      }}});
+})();
+
+// ── TABLE ────────────────────────────────────────────────────────────────
+(()=>{
+  const cats=[...new Set(DATA.map(d=>d.cat))].filter(Boolean).sort();
+  cats.forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c;$('fCat').appendChild(o);});
+
+  let sortCol=null,sortAsc=true;
+  document.querySelectorAll('#tbl th[data-col]').forEach(th=>{
+    th.onclick=()=>{
+      sortCol===th.dataset.col?sortAsc=!sortAsc:(sortCol=th.dataset.col,sortAsc=true);
+      document.querySelectorAll('#tbl th').forEach(h=>h.classList.remove('asc','desc'));
+      th.classList.add(sortAsc?'asc':'desc');
+      renderTable();
+    };
+  });
+
+  window.renderTable=function(){
+    const q=$('srch').value.toLowerCase().trim();
+    const catF=$('fCat').value,senF=$('fSen').value,gsF=$('fGS').value,
+          aiF=$('fAI').value,srcF=$('fSrc').value,remF=$('fRem').value,salF=$('fSal').value;
+
+    let rows=DATA.filter(d=>{
+      if(q&&!d.cat.toLowerCase().includes(q)&&
+         !(d.skills||[]).some(s=>s.toLowerCase().includes(q))&&
+         !d.cat.toLowerCase().includes(q)) return false;
+      if(catF&&d.cat!==catF) return false;
+      if(senF&&d.seniority!==senF) return false;
+      if(gsF&&d.gs!==gsF) return false;
+      if(aiF==='yes'&&!d.ai) return false;
+      if(aiF==='no'&&d.ai) return false;
+      if(srcF&&d.source!==srcF) return false;
+      if(remF==='yes'&&!d.remote) return false;
+      if(remF==='no'&&d.remote) return false;
+      if(salF==='has'&&!d.sal_mid) return false;
+      return true;
+    });
+
+    if(sortCol){
+      rows.sort((a,b)=>{
+        let va=a[sortCol]??'',vb=b[sortCol]??'';
+        if(typeof va==='string')va=va.toLowerCase();
+        if(typeof vb==='string')vb=vb.toLowerCase();
+        return va<vb?(sortAsc?-1:1):va>vb?(sortAsc?1:-1):0;
+      });
+    }
+
+    $('tcount').textContent=`${rows.length} listing${rows.length!==1?'s':''}`;
+    $('nores').style.display=rows.length?'none':'block';
+    const tbody=$('tbody');tbody.innerHTML='';
+
+    rows.forEach(d=>{
+      const sal=d.sal_mid
+        ?(d.sal_rng?`€${Math.round((d.sal_mid-d.sal_rng/2)/100)*100}–${Math.round((d.sal_mid+d.sal_rng/2)/100)*100}`:`~€${Math.round(d.sal_mid/100)*100}`):'—';
+      const sc=SEN_COLS[SEN_ORDER.indexOf(d.seniority)]||'#9DC3E6';
+      const tf=SEN_TEXT[d.seniority]||'#1F3864';
+      const tr=document.createElement('tr');
+      tr.innerHTML=`
+        <td><span class="badge" style="font-size:9px">${d.cat}</span>${d.remote?' <span class="badge r">Remote</span>':''}</td>
+        <td><span class="sen-badge" style="background:${sc};color:${tf}">${d.seniority}</span></td>
+        <td><span class="${d.gs==='Generalist'?'gs-badge-G':'gs-badge-S'}">${d.gs==='Generalist'?'Gen':'Spec'}</span></td>
+        <td style="white-space:nowrap;font-variant-numeric:tabular-nums;font-size:11px">${sal}</td>
+        <td style="text-align:center;color:var(--muted)">${d.min_exp?d.min_exp+'yr':'—'}</td>
+        <td style="text-align:center">${d.ai?'<span class="ai-badge">AI</span>':''}</td>
+        <td style="color:var(--muted)">${d.source}</td>`;
+      tbody.appendChild(tr);
+    });
+  };
+
+  ['srch','fCat','fSen','fGS','fAI','fSrc','fRem','fSal'].forEach(id=>{
+    $(id).addEventListener('input',renderTable);
+    $(id).addEventListener('change',renderTable);
+  });
+
+  renderTable();
+})();
+
+// ── INSIGHTS ─────────────────────────────────────────────────────────────
+(()=>{
+  const median=arr=>{const s=[...arr].sort((a,b)=>a-b);const m=Math.floor(s.length/2);return s.length%2?s[m]:(s[m-1]+s[m])/2;};
+  const fmt=v=>'€'+Math.round(v).toLocaleString()+'/mo';
+  const pctDiff=(a,b)=>{const d=(a/b-1)*100;return(d>0?'+':'')+d.toFixed(1)+'%';};
+
+  const gen=DATA.filter(d=>d.gs==='Generalist'&&d.sal_mid).map(d=>d.sal_mid);
+  const spec=DATA.filter(d=>d.gs==='Specialist'&&d.sal_mid).map(d=>d.sal_mid);
+
+  const rows=[
+    ['Total ads',DATA.filter(d=>d.gs==='Generalist').length+' / 57',DATA.filter(d=>d.gs==='Specialist').length+' / 123',''],
+    ['With salary disclosed',gen.length+' ('+Math.round(gen.length/57*100)+'%)',spec.length+' ('+Math.round(spec.length/123*100)+'%)',''],
+    ['Median salary',fmt(median(gen)),fmt(median(spec)),pctDiff(median(gen),median(spec))],
+    ['Mean salary',fmt(gen.reduce((a,b)=>a+b,0)/gen.length),fmt(spec.reduce((a,b)=>a+b,0)/spec.length),pctDiff(gen.reduce((a,b)=>a+b,0)/gen.length,spec.reduce((a,b)=>a+b,0)/spec.length)],
+    ['Min',fmt(Math.min(...gen)),fmt(Math.min(...spec)),''],
+    ['Max',fmt(Math.max(...gen)),fmt(Math.max(...spec)),''],
+  ];
+
+  const fillTable=(tbodyId,rows)=>{
+    const tbody=$(tbodyId);
+    rows.forEach(([label,a,b,gap],i)=>{
+      const tr=document.createElement('tr');
+      tr.style.cssText='border-bottom:1px solid #f0f0f0'+(i%2===0?';background:#fafafa':'');
+      const gapColor=gap.startsWith('-')?'#c0392b':gap.startsWith('+')?'#27ae60':'inherit';
+      tr.innerHTML=`
+        <td style="padding:7px 10px;color:var(--muted);font-size:12px">${label}</td>
+        <td style="padding:7px 10px;text-align:right;font-variant-numeric:tabular-nums">${a}</td>
+        <td style="padding:7px 10px;text-align:right;font-variant-numeric:tabular-nums">${b}</td>
+        <td style="padding:7px 10px;text-align:right;font-weight:700;color:${gapColor}">${gap}</td>`;
+      tbody.appendChild(tr);
+    });
+  };
+
+  const tbody=$('gsPayBody');
+  rows.forEach(([label,g,s,gap],i)=>{
+    const tr=document.createElement('tr');
+    tr.style.cssText='border-bottom:1px solid #f0f0f0'+(i%2===0?';background:#fafafa':'');
+    const gapColor=gap.startsWith('-')?'#c0392b':gap.startsWith('+')?'#27ae60':'inherit';
+    tr.innerHTML=`
+      <td style="padding:7px 10px;color:var(--muted);font-size:12px">${label}</td>
+      <td style="padding:7px 10px;text-align:right;font-variant-numeric:tabular-nums">${g}</td>
+      <td style="padding:7px 10px;text-align:right;font-variant-numeric:tabular-nums">${s}</td>
+      <td style="padding:7px 10px;text-align:right;font-weight:700;color:${gapColor}">${gap}</td>`;
+    tbody.appendChild(tr);
+  });
+
+  // AI pay gap table
+  const aiYes=DATA.filter(d=>d.ai&&d.sal_mid).map(d=>d.sal_mid);
+  const aiNo=DATA.filter(d=>!d.ai&&d.sal_mid).map(d=>d.sal_mid);
+  const totalAiYes=DATA.filter(d=>d.ai).length;
+  const totalAiNo=DATA.filter(d=>!d.ai).length;
+  const aiRows=[
+    ['Total ads',totalAiYes+' / 32',totalAiNo+' / 148',''],
+    ['With salary disclosed',aiYes.length+' ('+Math.round(aiYes.length/totalAiYes*100)+'%)',aiNo.length+' ('+Math.round(aiNo.length/totalAiNo*100)+'%)',''],
+    ['Median salary',fmt(median(aiYes)),fmt(median(aiNo)),pctDiff(median(aiYes),median(aiNo))],
+    ['Mean salary',fmt(aiYes.reduce((a,b)=>a+b,0)/aiYes.length),fmt(aiNo.reduce((a,b)=>a+b,0)/aiNo.length),pctDiff(aiYes.reduce((a,b)=>a+b,0)/aiYes.length,aiNo.reduce((a,b)=>a+b,0)/aiNo.length)],
+    ['Min',fmt(Math.min(...aiYes)),fmt(Math.min(...aiNo)),''],
+    ['Max',fmt(Math.max(...aiYes)),fmt(Math.max(...aiNo)),''],
+  ];
+  fillTable('aiPayBody',aiRows);
+
+  // AI × G/S cross-tab
+  const genAI   = DATA.filter(d=>d.gs==='Generalist'&&d.ai);
+  const genNoAI = DATA.filter(d=>d.gs==='Generalist'&&!d.ai);
+  const specAI  = DATA.filter(d=>d.gs==='Specialist'&&d.ai);
+  const specNoAI= DATA.filter(d=>d.gs==='Specialist'&&!d.ai);
+
+  const cellMed=arr=>{const v=arr.filter(d=>d.sal_mid).map(d=>d.sal_mid);return v.length?median(v):null;};
+  const cellStr=(group,total)=>{
+    const n=group.length,pct=Math.round(n/total*100);
+    const m=cellMed(group);
+    const salStr=m?`<br><span style="font-size:11px;color:var(--muted)">median €${Math.round(m).toLocaleString()}/mo</span>`:'';
+    return `${n} <span style="font-weight:400;color:var(--muted)">(${pct}%)</span>${salStr}`;
+  };
+
+  const crossRows=[
+    ['AI required',   cellStr(genAI,   57), cellStr(specAI,  123)],
+    ['No AI required',cellStr(genNoAI, 57), cellStr(specNoAI,123)],
+    ['AI rate',       Math.round(genAI.length/57*100)+'%',   Math.round(specAI.length/123*100)+'%'],
+  ];
+
+  const crossTbody=$('aiCrossBody');
+  crossRows.forEach(([label,g,s],i)=>{
+    const tr=document.createElement('tr');
+    tr.style.cssText='border-bottom:1px solid #f0f0f0'+(i%2===0?';background:#fafafa':'');
+    tr.innerHTML=`
+      <td style="padding:8px 10px;color:var(--muted);font-size:12px">${label}</td>
+      <td style="padding:8px 10px;text-align:right;font-weight:700">${g}</td>
+      <td style="padding:8px 10px;text-align:right;font-weight:700">${s}</td>`;
+    crossTbody.appendChild(tr);
+  });
+
+  $('aiCrossNote').innerHTML=`
+    <strong>Specialists are asked for AI more often</strong> (${Math.round(specAI.length/123*100)}% vs ${Math.round(genAI.length/57*100)}% of generalists) — AI is predominantly a specialist tool, not a generalist catch-all.
+    Within generalists, AI-required roles pay <strong>less</strong> (€${Math.round(cellMed(genAI)).toLocaleString()} vs €${Math.round(cellMed(genNoAI)).toLocaleString()} median) — these are coordinator-level roles at smaller or AI-native companies where one person is expected to do more with fewer resources.
+    Among specialists, the AI premium is also negative (€${Math.round(cellMed(specAI)).toLocaleString()} vs €${Math.round(cellMed(specNoAI)).toLocaleString()}) — dominated by Content &amp; Creative roles (12 of 25 AI specialist listings) where AI tools are now baseline expectations, not differentiators.
+    The pattern points more toward <em>productivity expectation</em> than headcount replacement at the specialist level — and toward <em>lean hiring</em> at the generalist level.`;
+
+  // ── Pay vs Requirements scatter matrix ───────────────────────────────
+  const matPts=DATA.filter(d=>d.x_sal!=null);
+
+  const buildDatasets=(pts)=>{
+    const specNoAI=pts.filter(d=>d.gs==='Specialist'&&!d.ai);
+    const specAI  =pts.filter(d=>d.gs==='Specialist'&&d.ai);
+    const genNoAI =pts.filter(d=>d.gs==='Generalist'&&!d.ai);
+    const genAI   =pts.filter(d=>d.gs==='Generalist'&&d.ai);
+    return [
+      {label:'Specialist',data:specNoAI.map(d=>({x:d.x_sal,y:d.y_req,d})),backgroundColor:'rgba(68,114,196,0.65)',pointStyle:'circle',pointRadius:6,pointHoverRadius:8},
+      {label:'Specialist + AI',data:specAI.map(d=>({x:d.x_sal,y:d.y_req,d})),backgroundColor:'rgba(68,114,196,0.9)',borderColor:'rgba(68,114,196,1)',pointStyle:'star',pointRadius:8,pointHoverRadius:10},
+      {label:'Generalist',data:genNoAI.map(d=>({x:d.x_sal,y:d.y_req,d})),backgroundColor:'rgba(224,123,57,0.65)',pointStyle:'circle',pointRadius:6,pointHoverRadius:8},
+      {label:'Generalist + AI',data:genAI.map(d=>({x:d.x_sal,y:d.y_req,d})),backgroundColor:'rgba(224,123,57,0.9)',borderColor:'rgba(224,123,57,1)',pointStyle:'star',pointRadius:8,pointHoverRadius:10},
+    ];
+  };
+
+  const matChart=new Chart($('cMatrix'),{type:'scatter',
+    data:{datasets:buildDatasets(matPts)},
+    options:{
+      responsive:true,maintainAspectRatio:false,
+      plugins:{
+        legend:{display:true,position:'bottom',labels:{boxWidth:9,font:{size:10},padding:10,usePointStyle:true}},
+        tooltip:{...BASE.plugins.tooltip,callbacks:{
+          label:c=>{
+            const d=c.raw.d;
+            const sal=d.sal_mid?`€${d.sal_mid.toLocaleString()}/mo`:'no salary';
+            return [`${d.cat}`,`${d.seniority} · ${d.gs}`,`${sal}`,`Req. Index: ${d.y_req}`];
+          }
+        }},
+      },
+      scales:{
+        x:{min:-2.5,max:2.5,
+           grid:{color:ctx=>ctx.tick.value===0?'#aaa':'#f0f0f0',lineWidth:ctx=>ctx.tick.value===0?1.5:1},
+           title:{display:true,text:'← Below-average pay for category  |  Above-average pay for category →',font:{size:11},color:'#666'},
+           ticks:{color:'#888',font:{size:10},callback:v=>v===0?'avg':v+'σ'}},
+        y:{min:-2.5,max:2.5,
+           grid:{color:ctx=>ctx.tick.value===0?'#aaa':'#f0f0f0',lineWidth:ctx=>ctx.tick.value===0?1.5:1},
+           title:{display:true,text:'← Fewer requirements  |  More requirements →',font:{size:11},color:'#666'},
+           ticks:{color:'#888',font:{size:10},callback:v=>v===0?'avg':v+'σ'}},
+      }
+    }
+  });
+
+  $('matFilter').addEventListener('change',function(){
+    const v=this.value;
+    const pts=v==='Generalist'?matPts.filter(d=>d.gs==='Generalist'):
+               v==='Specialist'?matPts.filter(d=>d.gs==='Specialist'):
+               v==='ai'?matPts.filter(d=>d.ai):matPts;
+    matChart.data.datasets=buildDatasets(pts);
+    matChart.update();
+  });
+})();
+</script>
+</body>
+</html>
